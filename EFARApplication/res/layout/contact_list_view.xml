@@ -3,18 +3,19 @@
     android:id="@+id/contact_list_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000" >
+    android:background="#000000"
+    android:orientation="vertical" >
 
     <com.mobile.efar.view.SlidingLinearLayout
         android:id="@+id/slidingview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="380dip"
         android:layout_alignParentTop="true" >
 
         <ListView
             android:id="@+id/contact_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="380dip"
             android:cacheColorHint="#000000"
             android:divider="#00000000"
             android:fadingEdge="none"
@@ -26,7 +27,7 @@
     <com.mobile.efar.view.QuickAlphabeticBar
         android:id="@+id/fast_scroller"
         android:layout_width="22dp"
-        android:layout_height="match_parent"
+        android:layout_height="380dip"
         android:layout_alignParentRight="true"
         android:layout_gravity="top|right|center"
         android:layout_marginTop="0dip"
@@ -48,5 +49,8 @@
         android:textColor="#404040"
         android:textSize="48dip"
         android:visibility="invisible" />
-
+    
+    <include
+        layout="@layout/menu_main"
+     />
 </RelativeLayout>

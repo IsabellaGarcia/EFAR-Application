@@ -3,6 +3,9 @@
     style="@style/Linearlayout_Horizontal"
     android:layout_gravity="bottom"
     android:layout_width="fill_parent"
+    
+    android:layout_alignParentBottom="true"
+    
     android:background="@color/translucence_lightlivid" >
     <ImageButton
         android:id="@+id/button_event"
