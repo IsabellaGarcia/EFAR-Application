@@ -1,3 +1,9 @@
+/**
+ *  Created by Xinyi HUANG
+ * Created Date: 26/11/2014
+ * Description: Activity for Finding contacts from contact-book of phone
+ */
+
 package com.mobile.efar;
 
 import java.util.ArrayList;
@@ -20,19 +26,13 @@ import com.mobile.efar.adapter.ContactListAdapter;
 import com.mobile.efar.datamodel.ContactBean;
 import com.mobile.efar.view.QuickAlphabeticBar;
 
-/**
- * 联系人列表
- * 
- * @author Administrator
- * 
- */
 public class ContactListActivity extends Activity {
 
 	private ContactListAdapter adapter;
 	private ListView contactList;
 	private List<ContactBean> list;
-	private AsyncQueryHandler asyncQueryHandler; // 异步查询数据库类对象
-	private QuickAlphabeticBar alphabeticBar; // 快速索引条
+	private AsyncQueryHandler asyncQueryHandler; 
+	private QuickAlphabeticBar alphabeticBar; 
 
 	private Map<Integer, ContactBean> contactIdMap = null;
 
@@ -43,35 +43,29 @@ public class ContactListActivity extends Activity {
 		contactList = (ListView) findViewById(R.id.contact_list);
 		alphabeticBar = (QuickAlphabeticBar) findViewById(R.id.fast_scroller);
 
-		// 实例化
 		asyncQueryHandler = new MyAsyncQueryHandler(getContentResolver());
 		init();
 
 	}
 
 	/**
-	 * 初始化数据库查询参数
+	 * Initialize parameters
 	 */
 	private void init() {
 		Uri uri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI; // 联系人Uri；
-		// 查询的字段
+		// Query
 		String[] projection = { ContactsContract.CommonDataKinds.Phone._ID,
 				ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
 				ContactsContract.CommonDataKinds.Phone.DATA1, "sort_key",
 				ContactsContract.CommonDataKinds.Phone.CONTACT_ID,
 				ContactsContract.CommonDataKinds.Phone.PHOTO_ID,
 				ContactsContract.CommonDataKinds.Phone.LOOKUP_KEY };
-		// 按照sort_key升序查詢
+		// Sort by sorted-key
 		asyncQueryHandler.startQuery(0, null, uri, projection, null, null,
 				"sort_key COLLATE LOCALIZED asc");
 
 	}
 
-	/**
-	 * 
-	 * @author Administrator
-	 * 
-	 */
 	private class MyAsyncQueryHandler extends AsyncQueryHandler {
 
 		public MyAsyncQueryHandler(ContentResolver cr) {
@@ -94,9 +88,9 @@ public class ContactListActivity extends Activity {
 					String lookUpKey = cursor.getString(6);
 
 					if (contactIdMap.containsKey(contactId)) {
-						// 无操作
+						
 					} else {
-						// 创建联系人对象
+						// Construct one contact
 						ContactBean contact = new ContactBean();
 						contact.setDesplayName(name);
 						contact.setPhoneNum(number);

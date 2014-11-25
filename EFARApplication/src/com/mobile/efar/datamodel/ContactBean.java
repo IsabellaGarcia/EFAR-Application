@@ -1,3 +1,8 @@
+/**
+ *  Created by Xinyi HUANG
+ * Created Date: 26/11/2014
+ * Description: Contact Model
+ */
 package com.mobile.efar.datamodel;
 
 public class ContactBean {

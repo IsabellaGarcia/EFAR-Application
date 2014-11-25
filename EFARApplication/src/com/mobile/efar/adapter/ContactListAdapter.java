@@ -1,3 +1,10 @@
+
+/**
+ *  Created by Xinyi HUANG
+ * Created Date: 26/11/2014
+ * Description: Adapter for contacts
+ */
+
 package com.mobile.efar.adapter;
 
 import java.io.InputStream;
@@ -29,9 +36,9 @@ import com.mobile.efar.view.QuickAlphabeticBar;
 public class ContactListAdapter extends BaseAdapter {
 	private LayoutInflater inflater;
 	private List<ContactBean> list;
-	private HashMap<String, Integer> alphaIndexer; // 字母索引
-	private String[] sections; // 存储每个章节
-	private Context ctx; // 上下文
+	private HashMap<String, Integer> alphaIndexer; //index
+	private String[] sections; 
+	private Context ctx; 
 
 	public ContactListAdapter(Context context, List<ContactBean> list,
 			QuickAlphabeticBar alpha) {
@@ -42,7 +49,7 @@ public class ContactListAdapter extends BaseAdapter {
 		this.sections = new String[list.size()];
 
 		for (int i = 0; i < list.size(); i++) {
-			// 得到字母
+		
 			String name = getAlpha(list.get(i).getSortKey());
 			if (!alphaIndexer.containsKey(name)) {
 				alphaIndexer.put(name, i);
@@ -112,9 +119,9 @@ public class ContactListAdapter extends BaseAdapter {
 			Bitmap contactPhoto = BitmapFactory.decodeStream(input);
 			holder.quickContactBadge.setImageBitmap(contactPhoto);
 		}
-		// 当前字母
+		
 		String currentStr = getAlpha(contact.getSortKey());
-		// 前面的字母
+		
 		String previewStr = (position - 1) >= 0 ? getAlpha(list.get(
 				position - 1).getSortKey()) : " ";
 
@@ -148,10 +155,10 @@ public class ContactListAdapter extends BaseAdapter {
 			return "#";
 		}
 		char c = str.trim().substring(0, 1).charAt(0);
-		// 正则表达式匹配
+		
 		Pattern pattern = Pattern.compile("^[A-Za-z]+$");
 		if (pattern.matcher(c + "").matches()) {
-			return (c + "").toUpperCase(); // 将小写字母转换为大写
+			return (c + "").toUpperCase(); 
 		} else {
 			return "#";
 		}

@@ -1,3 +1,9 @@
+/**
+ *  Created by Xinyi HUANG
+ * Created Date: 26/11/2014
+ * Description: Define Index
+ */
+
 package com.mobile.efar.view;
 
 import java.util.HashMap;
@@ -18,22 +24,17 @@ import android.widget.TextView;
 
 import com.example.efar.R;
 
-/**
- * 字母索引条
- * 
- * @Created by Isabella
- * 
- */
+
 public class QuickAlphabeticBar extends ImageButton {
-	private TextView mDialogText; // 中间显示字母的文本框
-	private Handler mHandler; // 处理UI的句柄
-	private ListView mList; // 列表
-	private float mHight; // 高度
-	// 字母列表索引
+	private TextView mDialogText; 
+	private Handler mHandler; 
+	private ListView mList; 
+	private float mHight; 
+
 	private String[] letters = new String[] { "#", "A", "B", "C", "D", "E",
 			"F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R",
 			"S", "T", "U", "V", "W", "X", "Y", "Z" };
-	// 字母索引哈希表
+	
 	private HashMap<String, Integer> alphaIndexer;
 	Paint paint = new Paint();
 	boolean showBkg = false;
@@ -51,24 +52,24 @@ public class QuickAlphabeticBar extends ImageButton {
 		super(context, attrs);
 	}
 
-	// 初始化
+	// Initialization
 	public void init(Activity ctx) {
 		mDialogText = (TextView) ctx.findViewById(R.id.fast_position);
 		mDialogText.setVisibility(View.INVISIBLE);
 		mHandler = new Handler();
 	}
 
-	// 设置需要索引的列表
+	//List of index
 	public void setListView(ListView mList) {
 		this.mList = mList;
 	}
 
-	// 设置字母索引哈希表
+	// set Hash table
 	public void setAlphaIndexer(HashMap<String, Integer> alphaIndexer) {
 		this.alphaIndexer = alphaIndexer;
 	}
 
-	// 设置字母索引条的高度
+	// Height
 	public void setHight(float mHight) {
 		this.mHight = mHight;
 	}
@@ -78,14 +79,14 @@ public class QuickAlphabeticBar extends ImageButton {
 		int act = event.getAction();
 		float y = event.getY();
 		final int oldChoose = choose;
-		// 计算手指位置，找到对应的段，让mList移动段开头的位置上
+	
 		int selectIndex = (int) (y / (mHight / letters.length));
 
-		if (selectIndex > -1 && selectIndex < letters.length) { // 防止越界
+		if (selectIndex > -1 && selectIndex < letters.length) {
 			String key = letters[selectIndex];
 			if (alphaIndexer.containsKey(key)) {
 				int pos = alphaIndexer.get(key);
-				if (mList.getHeaderViewsCount() > 0) { // 防止ListView有标题栏,本例中没有
+				if (mList.getHeaderViewsCount() > 0) { 
 					this.mList.setSelectionFromTop(
 							pos + mList.getHeaderViewsCount(), 0);
 				} else {
@@ -161,7 +162,7 @@ public class QuickAlphabeticBar extends ImageButton {
 				paint.setColor(Color.parseColor("#00BFFF")); // 滑动时按下字母颜色
 				paint.setFakeBoldText(true);
 			}
-			// 绘画的位置
+			
 			float xPos = width / 2 - paint.measureText(letters[i]) / 2;
 			float yPos = sigleHeight * i + sigleHeight;
 			canvas.drawText(letters[i], xPos, yPos, paint);
