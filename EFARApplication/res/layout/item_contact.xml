@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+    
+    <TextView
+        android:id = "@+id/contact_name"
+        android:layout_width = "wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Isabella Garcia"
+        />
+    
+     <TextView
+        android:id = "@+id/contact_number"
+        android:layout_width = "wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf = "@id/contact_name"
+        android:layout_centerVertical = "true"
+        android:layout_marginLeft = "25dip"
+        android:text="852-56457255"
+      />
+	  <TextView
+        android:id = "@+id/contact_block_number"
+        android:layout_width = "wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf = "@id/contact_number"
+        android:layout_centerVertical = "true"
+        android:layout_marginLeft = "25dip"
+        android:text="B"
+      />
+	  
+     <CheckBox
+         android:id="@+id/checkBox1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignBottom="@+id/contact_number"
+         android:layout_centerVertical = "true"
+         android:layout_alignParentRight = "true"
+         />
+
+</RelativeLayout>

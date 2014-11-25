@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Linearlayout_Horizontal"
+    android:layout_gravity="bottom"
+    android:layout_width="fill_parent"
+    android:background="@color/translucence_lightlivid" >
+    <ImageButton
+        android:id="@+id/button_event"
+        style="@style/Button_Menu"
+        android:src="@drawable/home"
+        android:contentDescription="@string/imagebutton_home" />
+    
+    <ImageButton
+        android:id="@+id/button_record"
+        style="@style/Button_Menu"
+        android:src="@drawable/location"
+        android:contentDescription="@string/imagebutton_location" />
+    
+    <ImageButton
+        android:id="@+id/button_contact"
+        style="@style/Button_Menu"
+        android:src="@drawable/contact"
+        android:contentDescription="@string/imagebutton_contact" />
+    
+    <ImageButton
+        android:id="@+id/button_setting"
+        style="@style/Button_Menu"
+        android:src="@drawable/setting"
+        android:contentDescription="@string/imagebutton_setting" />
+
+</LinearLayout>

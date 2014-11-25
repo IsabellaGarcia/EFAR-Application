@@ -1,0 +1,105 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <!-- Button style. -->
+    <style name="Button" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/solid_dark_red</item>
+        <item name="android:textSize">@dimen/normal_font</item> 
+        <item name="android:background">@drawable/translucence_orange_button</item>   
+        <item name="android:gravity">center</item>    
+    </style>
+    
+    <style name="Button_AcidBlue" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/solid_dark_acidblue</item>
+        <item name="android:textSize">@dimen/normal_font</item> 
+        <item name="android:background">@drawable/translucence_acidblue_button</item>   
+        <item name="android:gravity">center</item>   
+    </style>
+    
+    <!-- Menu Button style. -->
+    <style name="Button_Menu" parent="@android:style/Widget.ImageButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/solid_dark_red</item>
+        <item name="android:textSize">@dimen/menu_font</item> 
+        <item name="android:background">@android:color/transparent</item>   
+        <item name="android:gravity">center</item>   
+        <item name="android:padding">10sp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    
+    <!-- TextView style. -->
+    <style name="TextView" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/solid_dark_red</item>
+        <item name="android:textSize">@dimen/normal_font</item>
+    </style>
+    
+    <!-- TabItem TextView style. -->
+    <style name="TextView_Tabitem" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/solid_dark_acidblue</item>
+        <item name="android:textSize">@dimen/normal_font</item>
+    </style>
+    
+    <!-- Title TextView style. -->
+    <style name="TextView_Title" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/solid_dark_red</item>
+        <item name="android:textSize">@dimen/title_font</item>
+        <item name="android:background">@color/translucence_sandybrown</item>
+        <item name="android:gravity">center</item>  
+        <item name="android:padding">10sp</item>
+    </style>
+    
+    <!-- Popup EditText style. -->
+    <style name="EditText_Popup" parent="@android:style/Widget.EditText">
+    </style>
+    
+    <!-- EditText style. -->
+    <style name="EditText" parent="@android:style/Widget.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/edittext</item>
+        <item name="android:ems">@integer/password_ems</item>
+        <item name="android:textColorHint">@color/translucence_dark_orange</item>
+    </style>
+
+    <!-- Horizontal Linearlayout style. -->
+    <style name="Linearlayout_Horizontal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    
+    <!-- Vertical Linearlayout style. -->
+    <style name="Linearlayout_Vertical">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+</resources>

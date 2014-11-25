@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Lost</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_login">Log In!</string>
+    <string name="button_signup">Sign Up!</string>
+    <string name="edittext_phone_hint">Your phone number.</string>
+    <string name="edittext_nickname_hint">Your name.</string>
+    <string name="edittext_password_hint">Your password.</string>
+    <string name="edittext_password_again_hint">Password again.</string>
+    <string name="button_signup_verify">Verify</string>
+    <string name="edittext_phoneoremail_hint">Your phone/email.</string>
+    <string name="textview_title_0">Title0</string>
+    <string name="imagebutton_home">Home</string>
+    <string name="imagebutton_location">Location</string>
+    <string name="imagebutton_contact">Contact</string>
+    <string name="imagebutton_setting">Setting</string>
+    <string name="imageview_contact_photo">Contact Photo</string>
+    <string name="contactbtn">Contact List</string>
+    
+    <color name="translucence_littledark_orange">#55FFcF9F</color>
+    <color name="translucence_dark_orange">#55FF8409</color>
+    <color name="translucence_white">#55FFFFFF</color>
+    <color name="translucence_light_orange">#55FFAD5B</color>
+    <color name="solid_dark_red">#5E000E</color>
+    <color name="translucence_acidblue">#5572D0BE</color>
+    <color name="translucence_dark_acidblue">#55339B86</color>
+    <color name="translucence_light_acidblue">#55B6E7DD</color>
+    <color name="solid_dark_acidblue">#246F60</color>
+    <color name="translucence_sandybrown">#33DCB260</color>
+    <color name="translucence_lightlivid">#557092BE</color>
+    
+    <dimen name="normal_font">18sp</dimen>
+    <dimen name="normal_margintop">20dp</dimen>
+    <dimen name="title_font">28sp</dimen>
+    <dimen name="menu_font">23sp</dimen>
+    <dimen name="contact_photo">40dip</dimen>
+    
+    <integer name="password_ems">10</integer>
+    
+    
+    
+    
+    
+
+</resources>
