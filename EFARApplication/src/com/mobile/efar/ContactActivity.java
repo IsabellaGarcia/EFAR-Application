@@ -61,6 +61,7 @@ public class ContactActivity extends Activity{
 					Intent intent = new Intent();
 					intent.setClass(ContactActivity.this, EventActivity.class);
 					startActivity(intent);
+					finish();
 				}
 			});
 			
@@ -72,6 +73,7 @@ public class ContactActivity extends Activity{
 					Intent intent = new Intent();
 					intent.setClass(ContactActivity.this, RecordActivity.class);
 					startActivity(intent);
+					finish();
 				}
 			});
 	    }

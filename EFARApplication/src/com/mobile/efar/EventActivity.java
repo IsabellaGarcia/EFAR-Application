@@ -45,6 +45,7 @@ public class EventActivity extends Activity{
 					Intent intent = new Intent();
 					intent.setClass(EventActivity.this, RecordActivity.class);
 					startActivity(intent);
+					finish();
 				}
 			});
 		
@@ -56,6 +57,7 @@ public class EventActivity extends Activity{
 				Intent intent = new Intent();
 				intent.setClass(EventActivity.this, ContactActivity.class);
 				startActivity(intent);
+				finish();
 			}
 		});
 	}
