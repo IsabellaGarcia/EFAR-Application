@@ -61,6 +61,8 @@ public class RecordActivity extends Activity{
 				finish();
 			}
 		});
+		
+	
 	}
 	
 	private List<recordModel> getData() {

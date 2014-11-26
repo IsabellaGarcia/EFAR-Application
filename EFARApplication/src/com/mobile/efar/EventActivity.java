@@ -20,6 +20,7 @@ import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class EventActivity extends Activity{
 	private ListView lv_list;
@@ -27,6 +28,7 @@ public class EventActivity extends Activity{
 	private EventAdapter mAdapter;
 	private ImageButton imagebutton_contact;
 	private ImageButton imagebutton_record;
+	private TextView textView; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -60,6 +62,19 @@ public class EventActivity extends Activity{
 				finish();
 			}
 		});
+				 
+		/* textView = (TextView) findViewById(R.id.textView1);  
+		Intent intent = getIntent();
+		if(intent != null){
+			  String address = intent.getStringExtra("sms_address");  
+			  if (address != null) { 
+				  textView.append("\n\n发件人：\n" + address);  
+				  String bodyString = intent.getStringExtra("sms_body"); 
+				  if (bodyString != null) { 
+					  textView.append("\n短信内容：\n" + bodyString); 
+				  }
+			  }
+		}*/
 	}
 	
 	private List<eventModel> getData() {
