@@ -33,8 +33,8 @@ public class RecordActivity extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setTitle("Historical Record List");
-		setContentView(R.layout.list);
-		lv_list = (ListView)findViewById(R.id.lv_list);
+		setContentView(R.layout.record_list_view);
+		lv_list = (ListView)findViewById(R.id.record_list);
 		mAdapter = new RecordAdapter(this,getData());
 		lv_list.setAdapter(mAdapter);
 		container = (FrameLayout) findViewById(R.id.framelayout_main);

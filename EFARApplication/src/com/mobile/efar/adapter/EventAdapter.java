@@ -45,7 +45,7 @@ public class EventAdapter extends BaseAdapter{
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		View view = View.inflate(mContext, R.layout.item_event, null);
+		View view = View.inflate(mContext, R.layout.event_list_item, null);
 		eventModel event = mData.get(position);
 		
 		//Initialize view

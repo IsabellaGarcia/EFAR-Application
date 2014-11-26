@@ -31,8 +31,8 @@ public class EventActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setTitle("Emergency Events List");
-		 setContentView(R.layout.list);
-		 lv_list = (ListView) findViewById(R.id.lv_list);
+		 setContentView(R.layout.event_list_view);
+		 lv_list = (ListView) findViewById(R.id.event_list);
 		 mAdapter = new EventAdapter(this,getData());
 		 lv_list.setAdapter(mAdapter);
 		 container = (FrameLayout) findViewById(R.id.framelayout_main);
@@ -67,6 +67,9 @@ public class EventActivity extends Activity{
 		eventModel event1 = new eventModel();
 		event1.setEvent_name("Emergency from Block B");
 		list.add(event1);
+		eventModel event2 = new eventModel();
+		event2.setEvent_name("Emergency from Bloc");
+		list.add(event2);
 		return list;
 	}  
 	 

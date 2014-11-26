@@ -45,7 +45,7 @@ public class RecordAdapter extends BaseAdapter{
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		View view = View.inflate(mContext, R.layout.item_record, null);
+		View view = View.inflate(mContext, R.layout.record_list_item, null);
 		recordModel record = mData.get(position);
 		
 		//Initialize view
