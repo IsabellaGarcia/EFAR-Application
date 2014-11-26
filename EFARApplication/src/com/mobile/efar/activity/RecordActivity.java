@@ -4,7 +4,7 @@
 * Description: HActivity for Record list
 * 			   
 */
-package com.mobile.efar;
+package com.mobile.efar.activity;
 
 import java.util.ArrayList;
 import java.util.List;

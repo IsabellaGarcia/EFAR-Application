@@ -4,7 +4,7 @@
 * Description: Activity for Welcoming
 */ 
 
-package com.mobile.efar;
+package com.mobile.efar.activity;
 
 import com.example.efar.R;
 

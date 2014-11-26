@@ -5,7 +5,7 @@
 * 			   Link to ContactActivity/EventActivity/RecordActivity
 */ 
 
-package com.mobile.efar;
+package com.mobile.efar.activity;
 
 import com.example.efar.R;
 

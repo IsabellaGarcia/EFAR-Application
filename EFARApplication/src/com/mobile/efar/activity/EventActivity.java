@@ -3,7 +3,7 @@
 * Created Date: 26/11/2014
 * Description: Activity for Emergency Events list
 */
-package com.mobile.efar;
+package com.mobile.efar.activity;
 
 import java.util.ArrayList;
 import java.util.List;

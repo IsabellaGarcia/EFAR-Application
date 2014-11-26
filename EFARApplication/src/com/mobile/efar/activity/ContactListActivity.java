@@ -4,7 +4,7 @@
  * Description: Activity for Finding contacts from contact-book of phone
  */
 
-package com.mobile.efar;
+package com.mobile.efar.activity;
 
 import java.util.ArrayList;
 import java.util.HashMap;

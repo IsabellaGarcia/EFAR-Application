@@ -26,7 +26,7 @@
         android:theme="@style/AppTheme" >
         <!-- Activities List -->
         <activity
-            android:name="com.mobile.efar.WelcomeActivity"
+            android:name="com.mobile.efar.activity.WelcomeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@style/FullscreenTheme" >
@@ -36,20 +36,20 @@
             </intent-filter>
         </activity>
         <activity 
-            android:name="com.mobile.efar.HomeActivity"
+            android:name="com.mobile.efar.activity.HomeActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.mobile.efar.ContactActivity">
+            android:name="com.mobile.efar.activity.ContactActivity">
         </activity>
         <activity
-            android:name="com.mobile.efar.EventActivity">
+            android:name="com.mobile.efar.activity.EventActivity">
         </activity>
         <activity
-            android:name="com.mobile.efar.RecordActivity">
+            android:name="com.mobile.efar.activity.RecordActivity">
         </activity>
         <activity
-            android:name="com.mobile.efar.ContactListActivity">
+            android:name="com.mobile.efar.activity.ContactListActivity">
         </activity>
         
         <!-- BroadcastReceiver List -->
