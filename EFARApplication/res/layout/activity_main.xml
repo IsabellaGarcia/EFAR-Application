@@ -6,24 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     
-    <LinearLayout
+   <LinearLayout
         style="@style/Linearlayout_Horizontal"
         android:layout_width="match_parent" >
         
-         <TextView 
-            android:id="@+id/textview_title" 
-            style="@style/TextView_Title"
-            android:text="@string/textview_title_0" />
-            
+  
     </LinearLayout>
     
-     <!-- XML for text contact list -->
-     <Button
-           android:id="@+id/btn_openContactList"
-           android:layout_width = "200dp"
-           android:layout_height= "wrap_content"
-           android:text = "@string/contactbtn"
-      />    
              
     <!-- Dynamically load view. -->
     <!-- layout_width = match_parent doesn't perform well. -->

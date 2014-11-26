@@ -30,17 +30,17 @@ import android.widget.QuickContactBadge;
 import android.widget.TextView;
 
 import com.example.efar.R;
-import com.mobile.efar.datamodel.ContactBean;
+import com.mobile.efar.datamodel.contactModel;
 import com.mobile.efar.view.QuickAlphabeticBar;
 
 public class ContactListAdapter extends BaseAdapter {
 	private LayoutInflater inflater;
-	private List<ContactBean> list;
+	private List<contactModel> list;
 	private HashMap<String, Integer> alphaIndexer; //index
 	private String[] sections; 
 	private Context ctx; 
 
-	public ContactListAdapter(Context context, List<ContactBean> list,
+	public ContactListAdapter(Context context, List<contactModel> list,
 			QuickAlphabeticBar alpha) {
 		this.ctx = context;
 		this.inflater = LayoutInflater.from(context);
@@ -101,7 +101,7 @@ public class ContactListAdapter extends BaseAdapter {
 			holder = (ViewHolder) convertView.getTag();
 		}
 
-		ContactBean contact = list.get(position);
+		contactModel contact = list.get(position);
 		String name = contact.getDesplayName();
 		String number = contact.getPhoneNum();
 		holder.name.setText(name);

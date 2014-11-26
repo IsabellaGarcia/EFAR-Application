@@ -55,7 +55,7 @@ public class EventActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent();
-				intent.setClass(EventActivity.this, ContactActivity.class);
+				intent.setClass(EventActivity.this, ContactListActivity.class);
 				startActivity(intent);
 				finish();
 			}

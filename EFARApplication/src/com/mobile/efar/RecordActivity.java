@@ -44,7 +44,7 @@ public class RecordActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent();
-				intent.setClass(RecordActivity.this, ContactActivity.class);
+				intent.setClass(RecordActivity.this, ContactListActivity.class);
 				startActivity(intent);
 				finish();
 			}

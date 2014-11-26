@@ -10,5 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical = "true"
         android:text="Emergency in Block A"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#FFFFFF"
       />
 </LinearLayout>
