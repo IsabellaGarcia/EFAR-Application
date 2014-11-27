@@ -8,10 +8,6 @@ package com.mobile.efar.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.efar.R;
-import com.mobile.efar.adapter.EventAdapter;
-import com.mobile.efar.datamodel.eventModel;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,6 +17,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.efar.R;
+import com.mobile.efar.adapter.EventAdapter;
+import com.mobile.efar.datamodel.eventModel;
 
 public class EventActivity extends Activity{
 	private ListView lv_list;
@@ -35,7 +35,7 @@ public class EventActivity extends Activity{
 		setTitle("Emergency Events List");
 		 setContentView(R.layout.event_list_view);
 		 lv_list = (ListView) findViewById(R.id.event_list);
-		 mAdapter = new EventAdapter(this,getData());
+		 mAdapter = new EventAdapter(this, getData());
 		 lv_list.setAdapter(mAdapter);
 		 container = (FrameLayout) findViewById(R.id.framelayout_main);
 		 

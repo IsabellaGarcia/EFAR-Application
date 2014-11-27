@@ -9,16 +9,14 @@ package com.mobile.efar.adapter;
 
 import java.util.List;
 
-
-
-import com.example.efar.R;
-import com.mobile.efar.datamodel.recordModel;
-
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.example.efar.R;
+import com.mobile.efar.datamodel.recordModel;
 
 public class RecordAdapter extends BaseAdapter{
 	private List<recordModel> mData;

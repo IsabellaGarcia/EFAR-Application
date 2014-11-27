@@ -6,10 +6,10 @@
 
 package com.mobile.efar.activity;
 
-import com.example.efar.R;
-
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.example.efar.R;
 
 public class RecordDetail extends Activity{
 	@Override

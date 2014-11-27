@@ -9,10 +9,6 @@ package com.mobile.efar.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.efar.R;
-import com.mobile.efar.adapter.RecordAdapter;
-import com.mobile.efar.datamodel.recordModel;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,6 +17,10 @@ import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ListView;
+
+import com.example.efar.R;
+import com.mobile.efar.adapter.RecordAdapter;
+import com.mobile.efar.datamodel.recordModel;
 
 public class RecordActivity extends Activity{
 	private ListView lv_list;
@@ -35,7 +35,7 @@ public class RecordActivity extends Activity{
 		setTitle("Historical Record List");
 		setContentView(R.layout.record_list_view);
 		lv_list = (ListView)findViewById(R.id.record_list);
-		mAdapter = new RecordAdapter(this,getData());
+		mAdapter = new RecordAdapter(this, getData());
 		lv_list.setAdapter(mAdapter);
 		container = (FrameLayout) findViewById(R.id.framelayout_main);
 		
