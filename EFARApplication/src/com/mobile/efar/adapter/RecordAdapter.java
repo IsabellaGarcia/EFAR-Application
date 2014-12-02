@@ -16,10 +16,10 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.efar.R;
-import com.mobile.efar.datamodel.recordModel;
+import com.mobile.efar.datamodel.RecordModel;
 
 public class RecordAdapter extends BaseAdapter{
-	private List<recordModel> mData;
+	private List<RecordModel> mData;
 	private Context mContext;
 	
 	public RecordAdapter(Context context, List data){
@@ -44,7 +44,7 @@ public class RecordAdapter extends BaseAdapter{
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View view = View.inflate(mContext, R.layout.record_list_item, null);
-		recordModel record = mData.get(position);
+		RecordModel record = mData.get(position);
 		
 		//Initialize view
 		TextView record_name = (TextView)view.findViewById(R.id.record_name);	

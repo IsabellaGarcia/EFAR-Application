@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 import com.example.efar.R;
 import com.mobile.efar.adapter.EventAdapter;
-import com.mobile.efar.datamodel.eventModel;
+import com.mobile.efar.datamodel.EventModel;
 
 public class EventActivity extends Activity{
 	private ListView lv_list;
@@ -77,12 +77,12 @@ public class EventActivity extends Activity{
 		}*/
 	}
 	
-	private List<eventModel> getData() {
-		List<eventModel> list = new ArrayList<eventModel>();
-		eventModel event1 = new eventModel();
+	private List<EventModel> getData() {
+		List<EventModel> list = new ArrayList<EventModel>();
+		EventModel event1 = new EventModel();
 		event1.setEvent_name("Emergency from Block B");
 		list.add(event1);
-		eventModel event2 = new eventModel();
+		EventModel event2 = new EventModel();
 		event2.setEvent_name("Emergency from Bloc");
 		list.add(event2);
 		return list;

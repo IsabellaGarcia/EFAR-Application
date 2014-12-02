@@ -1,3 +1,10 @@
+/**
+ * Created by Michyo SONG
+ * Created Date: 28/11/2014
+ * Description: Database constants used in
+ * 				Database package.
+ */
+
 package com.mobile.efar.database;
 
 public class DatabaseConstants {

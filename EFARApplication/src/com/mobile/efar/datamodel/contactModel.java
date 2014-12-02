@@ -1,9 +1,13 @@
 package com.mobile.efar.datamodel;
 
-public class contactModel {
+import static android.provider.BaseColumns._ID;
+import android.database.Cursor;
+import static com.mobile.efar.database.DatabaseConstants.*;
+
+public class ContactModel {
 
 	private int contactId;
-	private String desplayName;
+	private String displayName;
 	private String phoneNum;
 	private String sortKey;
 	private Long photoId;
@@ -20,12 +24,12 @@ public class contactModel {
 		this.contactId = contactId;
 	}
 
-	public String getDesplayName() {
-		return desplayName;
+	public String getDisplayName() {
+		return displayName;
 	}
 
-	public void setDesplayName(String desplayName) {
-		this.desplayName = desplayName;
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
 	}
 
 	public String getPhoneNum() {
@@ -83,5 +87,20 @@ public class contactModel {
 	public void setPinyin(String pinyin) {
 		this.pinyin = pinyin;
 	}
-
+	
+	/**
+	 * Reduct from a cursor to build a class of ContactModel.
+	 * @param cursor:Cursor
+	 * @return result:ContactModel
+	 */
+	public static ContactModel reductContact(Cursor cursor) {
+		ContactModel result = new ContactModel();
+		if(cursor != null && cursor.moveToFirst()){  
+            int _id = cursor.getInt(cursor.getColumnIndex(_ID));  
+            String name = cursor.getString(cursor.getColumnIndex(NAME));  
+            result.setContactId(_id);  
+            result.setDisplayName(name);  
+        }  
+        return result;  
+	}
 }

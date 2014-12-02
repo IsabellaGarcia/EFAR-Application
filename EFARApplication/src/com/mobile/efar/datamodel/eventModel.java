@@ -6,7 +6,7 @@
 
 package com.mobile.efar.datamodel;
 
-public class eventModel {
+public class EventModel {
 	//Emergency name
 	private String event_name;
 	

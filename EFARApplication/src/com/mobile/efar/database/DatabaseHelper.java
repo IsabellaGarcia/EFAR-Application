@@ -1,3 +1,11 @@
+/**
+ * Created by Michyo SONG
+ * Created Date: 28/11/2014
+ * Description: Database operations help,
+ * 				include add, delete and 
+ * 				so on.
+ */
+
 package com.mobile.efar.database;
 
 import static com.mobile.efar.database.DatabaseConstants.*;
@@ -18,6 +26,11 @@ public class DatabaseHelper {
 	private DatabaseOpener db_opener = null;
 	private Context activity_context = null;
 	
+	public DatabaseHelper(Context c) {
+		activity_context = c;
+		openDatabase();
+	}
+	
 	/**
 	 * @param args
 	 */
@@ -26,14 +39,11 @@ public class DatabaseHelper {
 
 	}
 	
-	@SuppressWarnings("unused")
 	private void openDatabase(){
 		db_opener = new DatabaseOpener(activity_context); 
     }
 	
-	
-	@SuppressWarnings("unused")
-	private void addEfar(String name, String phone, String address, String time, String skill){
+	public void addEfar(String name, String phone, String address, String time, String skill) {
         SQLiteDatabase db = db_opener.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(NAME, name);
@@ -46,7 +56,7 @@ public class DatabaseHelper {
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@SuppressLint("NewApi")
-	private Cursor getCursor(String table_name){
+	private Cursor getCursor(String table_name) {
         SQLiteDatabase db = db_opener.getReadableDatabase();
         String[] columns = {_ID, NAME, PHONE, ADDRESS_TAG, TIME_AVAILABLE, SKILL_AVAILABLE};
 
@@ -56,22 +66,26 @@ public class DatabaseHelper {
 
         return cursor;
     }
+    
+	public Cursor getById(String table_name, int id) {
+    	SQLiteDatabase db = db_opener.getReadableDatabase();  
+        Cursor cursor = db.query(table_name, null, _ID + "=?", new String[]{String.valueOf(id)}, null, null, null);  
+        return cursor;
+    }
 
-    @SuppressWarnings("unused")
-	private void del(String table_name, int id){
+	public void delete(String table_name, int id) {
         SQLiteDatabase db = db_opener.getWritableDatabase();
         db.delete(table_name, _ID + "=" + id, null);
     }
 
-    private void update(){
+	public void update(String table_name, int id, ContentValues values) {
        /* ContentValues values = new ContentValues();
         values.put(NAME, editName.getText().toString());
         values.put(TEL, editTel.getText().toString());
-        values.put(EMAIL, editEmail.getText().toString());
+        values.put(EMAIL, editEmail.getText().toString());*/
 
-        SQLiteDatabase db = dbhelper.getWritableDatabase();
-        db.update(TABLE_NAME, values, _ID + "=" + id, null);*/
+        SQLiteDatabase db = db_opener.getWritableDatabase();
+        db.update(table_name, values, _ID + "=" + id, null);
 
     }
-
 }

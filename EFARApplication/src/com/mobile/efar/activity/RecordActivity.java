@@ -1,7 +1,7 @@
 /** 
 * Created by Xinyi HUANG
 * Created Date: 26/11/2014
-* Description: HActivity for Record list
+* Description: Activity for Record list
 * 			   
 */
 package com.mobile.efar.activity;
@@ -11,16 +11,24 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.efar.R;
 import com.mobile.efar.adapter.RecordAdapter;
-import com.mobile.efar.datamodel.recordModel;
+import com.mobile.efar.datamodel.ContactModel;
+import com.mobile.efar.datamodel.RecordModel;
+
+import com.mobile.efar.database.*;
+
+import static com.mobile.efar.database.DatabaseConstants.*;
+import static com.mobile.efar.datamodel.ContactModel.reductContact;
 
 public class RecordActivity extends Activity{
 	private ListView lv_list;
@@ -38,6 +46,15 @@ public class RecordActivity extends Activity{
 		mAdapter = new RecordAdapter(this, getData());
 		lv_list.setAdapter(mAdapter);
 		container = (FrameLayout) findViewById(R.id.framelayout_main);
+		
+		// Database test start.
+		DatabaseHelper dbhelper = new DatabaseHelper(this);
+		dbhelper.addEfar("a", null, null, null, null);
+		Cursor cursor = dbhelper.getById(TABLE_BLOCK_EFARS, 1);
+		ContactModel contact = reductContact(cursor);
+		Toast.makeText(getApplicationContext(), contact.getDisplayName(),
+			     Toast.LENGTH_SHORT).show();
+		// Database test end.
 		
 		imagebutton_contact = (ImageButton) findViewById(R.id.button_contact);
 		imagebutton_contact.setOnClickListener(new OnClickListener(){
@@ -65,9 +82,9 @@ public class RecordActivity extends Activity{
 	
 	}
 	
-	private List<recordModel> getData() {
-		List<recordModel> list = new ArrayList<recordModel>();
-		recordModel record1 = new recordModel();
+	private List<RecordModel> getData() {
+		List<RecordModel> list = new ArrayList<RecordModel>();
+		RecordModel record1 = new RecordModel();
 		record1.setRecord_name("Emergency M in xxxx");
 		list.add(record1);
 		return list;
