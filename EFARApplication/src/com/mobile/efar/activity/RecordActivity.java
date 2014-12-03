@@ -22,13 +22,13 @@ import android.widget.Toast;
 
 import com.example.efar.R;
 import com.mobile.efar.adapter.RecordAdapter;
-import com.mobile.efar.datamodel.ContactModel;
+import com.mobile.efar.datamodel.EfarModel;
 import com.mobile.efar.datamodel.RecordModel;
 
 import com.mobile.efar.database.*;
 
 import static com.mobile.efar.database.DatabaseConstants.*;
-import static com.mobile.efar.datamodel.ContactModel.reductContact;
+import static com.mobile.efar.datamodel.EfarModel.reductEfar;
 
 public class RecordActivity extends Activity{
 	private ListView lv_list;
@@ -51,8 +51,8 @@ public class RecordActivity extends Activity{
 		DatabaseHelper dbhelper = new DatabaseHelper(this);
 		dbhelper.addEfar("a", null, null, null, null);
 		Cursor cursor = dbhelper.getById(TABLE_BLOCK_EFARS, 1);
-		ContactModel contact = reductContact(cursor);
-		Toast.makeText(getApplicationContext(), contact.getDisplayName(),
+		EfarModel contact = reductEfar(cursor);
+		Toast.makeText(getApplicationContext(), contact.getName(),
 			     Toast.LENGTH_SHORT).show();
 		// Database test end.
 		
