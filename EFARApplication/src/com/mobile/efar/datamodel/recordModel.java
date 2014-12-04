@@ -5,8 +5,6 @@
 */
 package com.mobile.efar.datamodel;
 
-import android.database.Cursor;
-
 public class RecordModel {
 	private String record_name;
 
