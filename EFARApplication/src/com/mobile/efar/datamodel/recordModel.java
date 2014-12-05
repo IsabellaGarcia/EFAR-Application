@@ -5,7 +5,7 @@
 */
 package com.mobile.efar.datamodel;
 
-public class recordModel {
+public class RecordModel {
 	private String record_name;
 
 	public String getRecord_name() {
@@ -15,5 +15,4 @@ public class recordModel {
 	public void setRecord_name(String record_name) {
 		this.record_name = record_name;
 	}
-	
 }

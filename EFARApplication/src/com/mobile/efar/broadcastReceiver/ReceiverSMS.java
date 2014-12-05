@@ -9,14 +9,14 @@
 
 package com.mobile.efar.broadcastReceiver;
 
-import com.mobile.efar.activity.EventActivity;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
 import android.widget.Toast;
+
+import com.mobile.efar.activity.EventActivity;
 
 public class ReceiverSMS extends BroadcastReceiver{
 

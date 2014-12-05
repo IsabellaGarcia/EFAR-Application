@@ -9,18 +9,17 @@ package com.mobile.efar.adapter;
 
 import java.util.List;
 
-import com.example.efar.R;
-import com.mobile.efar.datamodel.eventModel;
-
-
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.efar.R;
+import com.mobile.efar.datamodel.EventModel;
+
 public class EventAdapter extends BaseAdapter{
-	private List<eventModel> mData;
+	private List<EventModel> mData;
 	private Context mContext;
 	
 	public EventAdapter(Context context, List data){
@@ -46,7 +45,7 @@ public class EventAdapter extends BaseAdapter{
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View view = View.inflate(mContext, R.layout.event_list_item, null);
-		eventModel event = mData.get(position);
+		EventModel event = mData.get(position);
 		
 		//Initialize view
 		TextView event_name = (TextView)view.findViewById(R.id.event_name);	

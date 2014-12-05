@@ -26,19 +26,19 @@ import android.widget.ListView;
 
 import com.example.efar.R;
 import com.mobile.efar.adapter.ContactListAdapter;
-import com.mobile.efar.datamodel.contactModel;
+import com.mobile.efar.datamodel.ContactModel;
 import com.mobile.efar.view.QuickAlphabeticBar;
 
 public class ContactListActivity extends Activity {
 
 	private ContactListAdapter adapter;
 	private ListView contactList;
-	private List<contactModel> list;
+	private List<ContactModel> list;
 	private AsyncQueryHandler asyncQueryHandler; 
 	private QuickAlphabeticBar alphabeticBar; 
 	private ImageButton imagebutton_record;
 	private ImageButton imagebutton_event;
-	private Map<Integer, contactModel> contactIdMap = null;
+	private Map<Integer, ContactModel> contactIdMap = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -105,8 +105,8 @@ public class ContactListActivity extends Activity {
 		@Override
 		protected void onQueryComplete(int token, Object cookie, Cursor cursor) {
 			if (cursor != null && cursor.getCount() > 0) {
-				contactIdMap = new HashMap<Integer, contactModel>();
-				list = new ArrayList<contactModel>();
+				contactIdMap = new HashMap<Integer, ContactModel>();
+				list = new ArrayList<ContactModel>();
 				cursor.moveToFirst(); // 游标移动到第一项
 				for (int i = 0; i < cursor.getCount(); i++) {
 					cursor.moveToPosition(i);
@@ -121,8 +121,8 @@ public class ContactListActivity extends Activity {
 						
 					} else {
 						// Construct one contact
-						contactModel contact = new contactModel();
-						contact.setDesplayName(name);
+						ContactModel contact = new ContactModel();
+						contact.setDisplayName(name);
 						contact.setPhoneNum(number);
 						contact.setSortKey(sortKey);
 						contact.setPhotoId(photoId);
@@ -142,7 +142,7 @@ public class ContactListActivity extends Activity {
 
 	}
 
-	private void setAdapter(List<contactModel> list) {
+	private void setAdapter(List<ContactModel> list) {
 		adapter = new ContactListAdapter(this, list, alphabeticBar);
 		contactList.setAdapter(adapter);
 		alphabeticBar.init(ContactListActivity.this);

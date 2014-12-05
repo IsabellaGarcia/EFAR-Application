@@ -1,9 +1,9 @@
 package com.mobile.efar.datamodel;
 
-public class contactModel {
+public class ContactModel {
 
 	private int contactId;
-	private String desplayName;
+	private String displayName;
 	private String phoneNum;
 	private String sortKey;
 	private Long photoId;
@@ -20,12 +20,12 @@ public class contactModel {
 		this.contactId = contactId;
 	}
 
-	public String getDesplayName() {
-		return desplayName;
+	public String getDisplayName() {
+		return displayName;
 	}
 
-	public void setDesplayName(String desplayName) {
-		this.desplayName = desplayName;
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
 	}
 
 	public String getPhoneNum() {
@@ -83,5 +83,4 @@ public class contactModel {
 	public void setPinyin(String pinyin) {
 		this.pinyin = pinyin;
 	}
-
 }
