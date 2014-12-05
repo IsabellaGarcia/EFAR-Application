@@ -6,8 +6,17 @@
  * 				Activate EventActivity
  */
 
+/**
+ * Changed by Xinyi HUANG
+ * Created Date: 05/12/2014
+ * Description: Get sendtime from user
+ * 				Format sendtime		
+ */
 
 package com.mobile.efar.broadcastReceiver;
+
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -36,6 +45,7 @@ public class ReceiverSMS extends BroadcastReceiver{
 			Bundle bundle = intent.getExtras();
 			String sender1;
 			String body1;
+			String sendtime;
 			
 			if(bundle!=null){
 				//Get all the context of SMS by pdus
@@ -45,8 +55,18 @@ public class ReceiverSMS extends BroadcastReceiver{
 				for(int i = 0 ;i<pdus.length;i++){ 
 					//SMS Object
 					 msg[i] = SmsMessage.createFromPdu((byte[])pdus[i]);
+					 
+					 
+					 /*
+					  * Get sender, text body, and sent time
+					  */
 					 sender1 = msg[i].getOriginatingAddress();
 					 body1 = msg[i].getDisplayMessageBody();
+					 Date date = new Date(msg[i].getTimestampMillis());
+					 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+					 sendtime = format.format(date);
+					 
+					 
 					 //Emergency SMS starts with '@' 
 					 if(body1.startsWith(queryString)){
 						 Toast.makeText(context, "Sender£º"+sender1 + "\r\n#Content:"+ body1, Toast.LENGTH_LONG).show();
