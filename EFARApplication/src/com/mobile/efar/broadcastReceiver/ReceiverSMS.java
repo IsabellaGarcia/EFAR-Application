@@ -17,6 +17,7 @@ package com.mobile.efar.broadcastReceiver;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -26,6 +27,7 @@ import android.telephony.SmsMessage;
 import android.widget.Toast;
 
 import com.mobile.efar.activity.EventActivity;
+import com.mobile.efar.activity.RecordActivity;
 
 public class ReceiverSMS extends BroadcastReceiver{
 
@@ -33,14 +35,14 @@ public class ReceiverSMS extends BroadcastReceiver{
 	private static final String strRes = "android.provider.Telephony.SMS_RECEIVED";
 	//Define specific starting-character for SMS to filter useless SMS
 	private static final String queryString = "@";
-	
+	private static final String LOG_TAG ="SMSReceiver"; 
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		
 		//If gets the intent of receiving SMS for EFAR
 		if(strRes.equals(intent.getAction())){
-			StringBuilder b = new StringBuilder();
-			 Intent event1 = new Intent(context, EventActivity.class);  
+			StringBuilder sb = new StringBuilder();
+			ArrayList<String> list =new ArrayList<String>(); 
 			//get information from intent
 			Bundle bundle = intent.getExtras();
 			String sender1;
@@ -54,38 +56,45 @@ public class ReceiverSMS extends BroadcastReceiver{
 				SmsMessage[] msg = new SmsMessage[pdus.length];  
 				for(int i = 0 ;i<pdus.length;i++){ 
 					//SMS Object
-					 msg[i] = SmsMessage.createFromPdu((byte[])pdus[i]);
-					 
+					 msg[i] = SmsMessage.createFromPdu((byte[])pdus[i]);				 
 					 
 					 /*
 					  * Get sender, text body, and sent time
+					  * append into sb, like 
+					  * Garcia#2014-11-05 12:17:00#Tag:Central Event: There is...... &
 					  */
 					 sender1 = msg[i].getOriginatingAddress();
-					 body1 = msg[i].getDisplayMessageBody();
+					 sb.append(sender1);
+					 sb.append("#");
 					 Date date = new Date(msg[i].getTimestampMillis());
 					 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 					 sendtime = format.format(date);
-					 
-					 
+					 sb.append(sendtime);
+					 sb.append("#");
+					 body1 = msg[i].getDisplayMessageBody();
+					 sb.append(body1);
+					 sb.append("&");
+					 list.add(sb.toString());
+					//FOR RECORD
+					//Log.i(ReceiverSMS.LOG_TAG, "[EFAR] onReceiveIntent0: "+ sb); 
+					 abortBroadcast();
+						
 					 //Emergency SMS starts with '@' 
 					 if(body1.startsWith(queryString)){
 						 Toast.makeText(context, "Sender£º"+sender1 + "\r\n#Content:"+ body1, Toast.LENGTH_LONG).show();
 						 //Activate EventActivity
+						 Intent in = new Intent(context,EventActivity.class);
+						 Bundle bundle2 = new Bundle();
+						 bundle2.putStringArrayList("message", list);
+						 in.putExtras(bundle2);
+						 //destroy other activities
+						 in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+						 context.startActivity(in);
+						//FOR RECORD
+						//Log.i(ReceiverSMS.LOG_TAG, "[EFAR] onReceiveIntent0 Over: "); 		 
 					 }
-				}
-				
-			/*	for(SmsMessage curMsg:msg){
-					b.append("You got the message From:¡¾");
-					//Get Sender
-					b.append(curMsg.getDisplayOriginatingAddress());
-					//Get content
-					b.append("¡¿Content£º");
-					b.append(curMsg.getDisplayMessageBody());
-				}*/
-				//start EventActivity
-				//context.startActivity(event1);
-			}
+				}//Process for one message
+			}//for one bundle
 		}
 	}
-
 }
