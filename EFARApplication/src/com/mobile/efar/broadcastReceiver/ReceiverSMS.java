@@ -27,7 +27,6 @@ import android.telephony.SmsMessage;
 import android.widget.Toast;
 
 import com.mobile.efar.activity.EventActivity;
-import com.mobile.efar.activity.RecordActivity;
 
 public class ReceiverSMS extends BroadcastReceiver{
 

@@ -10,6 +10,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,17 +24,41 @@ import com.mobile.efar.adapter.EventAdapter;
 import com.mobile.efar.datamodel.EventModel;
 
 public class EventActivity extends Activity{
+	//New for receiving SMS from broadcast receiver
+	private static final String LOG_TAG ="SMSReceiver"; 
+	private Cursor mDiaryCursur;
+	
+	
 	private ListView lv_list;
-	private FrameLayout container;
 	private EventAdapter mAdapter;
+	private TextView textView; 
+	
+	//For 4 button to skip to other interface
+	private FrameLayout container;
 	private ImageButton imagebutton_contact;
 	private ImageButton imagebutton_record;
-	private TextView textView; 
+	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setTitle("Emergency Events List");
-		 setContentView(R.layout.event_list_view);
+		setContentView(R.layout.event_list_view); 
+		Layout();
+	}
+	
+	private List<EventModel> getData() {
+		List<EventModel> list = new ArrayList<EventModel>();
+		EventModel event1 = new EventModel();
+		event1.setEvent_name("Emergency from Block B");
+		list.add(event1);
+		EventModel event2 = new EventModel();
+		event2.setEvent_name("Emergency from Bloc");
+		list.add(event2);
+		return list;
+	}  
+	
+	private void Layout(){
 		 lv_list = (ListView) findViewById(R.id.event_list);
 		 mAdapter = new EventAdapter(this, getData());
 		 lv_list.setAdapter(mAdapter);
@@ -62,30 +87,7 @@ public class EventActivity extends Activity{
 				finish();
 			}
 		});
-				 
-		/* textView = (TextView) findViewById(R.id.textView1);  
-		Intent intent = getIntent();
-		if(intent != null){
-			  String address = intent.getStringExtra("sms_address");  
-			  if (address != null) { 
-				  textView.append("\n\n发件人：\n" + address);  
-				  String bodyString = intent.getStringExtra("sms_body"); 
-				  if (bodyString != null) { 
-					  textView.append("\n短信内容：\n" + bodyString); 
-				  }
-			  }
-		}*/
+			
 	}
-	
-	private List<EventModel> getData() {
-		List<EventModel> list = new ArrayList<EventModel>();
-		EventModel event1 = new EventModel();
-		event1.setEvent_name("Emergency from Block B");
-		list.add(event1);
-		EventModel event2 = new EventModel();
-		event2.setEvent_name("Emergency from Bloc");
-		list.add(event2);
-		return list;
-	}  
 	 
 }
