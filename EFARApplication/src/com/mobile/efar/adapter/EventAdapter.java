@@ -16,11 +16,14 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.efar.R;
+import com.mobile.efar.database.DatabaseConstants;
+import com.mobile.efar.database.DatabaseHelper;
 import com.mobile.efar.datamodel.EventModel;
 
 public class EventAdapter extends BaseAdapter{
 	private List<EventModel> mData;
 	private Context mContext;
+	private DatabaseHelper mDbHelper;
 	
 	public EventAdapter(Context context, List data){
 		this.mData = data;
@@ -42,6 +45,7 @@ public class EventAdapter extends BaseAdapter{
 		return position;
 	}
 
+	//public 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View view = View.inflate(mContext, R.layout.event_list_item, null);
@@ -50,7 +54,7 @@ public class EventAdapter extends BaseAdapter{
 		//Initialize view
 		TextView event_name = (TextView)view.findViewById(R.id.event_name);	
 		//Dynamically bind data to view
-		event_name.setText(event.getEvent_name());
+		//event_name.setText(event.getEvent_name());
 		//return the final view
 		return view;
 	}

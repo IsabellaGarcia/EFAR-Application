@@ -8,6 +8,7 @@ package com.mobile.efar.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.R.integer;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -22,12 +23,14 @@ import android.widget.TextView;
 import com.example.efar.R;
 import com.mobile.efar.adapter.EventAdapter;
 import com.mobile.efar.datamodel.EventModel;
-
+import android.widget.TextView; 
 public class EventActivity extends Activity{
 	//New for receiving SMS from broadcast receiver
 	private static final String LOG_TAG ="SMSReceiver"; 
-	private Cursor mDiaryCursur;
-	
+	private TextView senderName;
+	private TextView sendTime;
+	private TextView address_tag;
+	private TextView body;
 	
 	private ListView lv_list;
 	private EventAdapter mAdapter;
@@ -47,17 +50,20 @@ public class EventActivity extends Activity{
 		Layout();
 	}
 	
+	
+
 	private List<EventModel> getData() {
 		List<EventModel> list = new ArrayList<EventModel>();
 		EventModel event1 = new EventModel();
-		event1.setEvent_name("Emergency from Block B");
+		//event1.setEvent_name("Emergency from Block B");
 		list.add(event1);
 		EventModel event2 = new EventModel();
-		event2.setEvent_name("Emergency from Bloc");
+		//event2.setEvent_name("Emergency from Bloc");
 		list.add(event2);
 		return list;
 	}  
 	
+	//Initialize the layout of this activity
 	private void Layout(){
 		 lv_list = (ListView) findViewById(R.id.event_list);
 		 mAdapter = new EventAdapter(this, getData());

@@ -52,15 +52,15 @@ public class ReceiverSMS extends BroadcastReceiver{
 				//Get all the context of SMS by pdus
 				Object[] pdus = (Object[])bundle.get("pdus");  
 				//Store in msg
-				SmsMessage[] msg = new SmsMessage[pdus.length];  
+				SmsMessage[] msg = new SmsMessage[pdus.length]; 
+				
 				for(int i = 0 ;i<pdus.length;i++){ 
-					//SMS Object
+					//SMS Object, might be multiple SMS
 					 msg[i] = SmsMessage.createFromPdu((byte[])pdus[i]);				 
-					 
 					 /*
 					  * Get sender, text body, and sent time
 					  * append into sb, like 
-					  * Garcia#2014-11-05 12:17:00#Tag:Central Event: There is...... &
+					  * Garcia#2014-11-05 12:17:00#@Central #Event: There is...... &
 					  */
 					 sender1 = msg[i].getOriginatingAddress();
 					 sb.append(sender1);
@@ -77,10 +77,10 @@ public class ReceiverSMS extends BroadcastReceiver{
 					//FOR RECORD
 					//Log.i(ReceiverSMS.LOG_TAG, "[EFAR] onReceiveIntent0: "+ sb); 
 					 abortBroadcast();
-						
+					 
 					 //Emergency SMS starts with '@' 
 					 if(body1.startsWith(queryString)){
-						 Toast.makeText(context, "Sender£º"+sender1 + "\r\n#Content:"+ body1, Toast.LENGTH_LONG).show();
+						 Toast.makeText(context, "Sender£º"+sender1 + "\r\n#Content:"+ body1 + sendtime, Toast.LENGTH_LONG).show();
 						 //Activate EventActivity
 						 Intent in = new Intent(context,EventActivity.class);
 						 Bundle bundle2 = new Bundle();
@@ -90,7 +90,7 @@ public class ReceiverSMS extends BroadcastReceiver{
 						 in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 						 context.startActivity(in);
 						//FOR RECORD
-						//Log.i(ReceiverSMS.LOG_TAG, "[EFAR] onReceiveIntent0 Over: "); 		 
+						//Log.i(ReceiverSMS.LOG_TAG, "[EFAR] onReceiveIntent0 Over: "); 	
 					 }
 				}//Process for one message
 			}//for one bundle

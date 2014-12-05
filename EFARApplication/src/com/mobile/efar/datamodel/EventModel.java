@@ -9,16 +9,14 @@ package com.mobile.efar.datamodel;
 public class EventModel {
 	//Emergency name
 	private int id;
-	private String event_name;
+	private String phone;
+	private String time;
+	private String address_tag;
+	private String description;
+	
+	//private String event_name;
 	private int[] efars;
 	
-	public String getEvent_name() {
-		return event_name;
-	}
-
-	public void setEvent_name(String event_name) {
-		this.event_name = event_name;
-	}
 
 	/**
 	 * @return the efars
@@ -46,5 +44,37 @@ public class EventModel {
 	 */
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getAddress_tag() {
+		return address_tag;
+	}
+
+	public void setAddress_tag(String address_tag) {
+		this.address_tag = address_tag;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
 	}
 }

@@ -75,28 +75,32 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int welcome=0x7f02001c;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0015;
+        public static final int action_settings=0x7f0a0019;
+        public static final int address_tag=0x7f0a000c;
         public static final int alpha=0x7f0a0001;
-        public static final int button_contact=0x7f0a000f;
-        public static final int button_event=0x7f0a000d;
-        public static final int button_record=0x7f0a000e;
-        public static final int button_setting=0x7f0a0010;
+        public static final int body=0x7f0a000d;
+        public static final int button_contact=0x7f0a0013;
+        public static final int button_event=0x7f0a0011;
+        public static final int button_record=0x7f0a0012;
+        public static final int button_setting=0x7f0a0014;
         public static final int contact_list=0x7f0a0007;
         public static final int contact_list_view=0x7f0a0005;
-        public static final int event_list=0x7f0a000b;
-        public static final int event_name=0x7f0a000a;
+        public static final int event_list=0x7f0a000f;
+        public static final int event_name=0x7f0a000e;
         public static final int fast_position=0x7f0a0009;
         public static final int fast_scroller=0x7f0a0008;
         public static final int framelayout_main=0x7f0a0000;
         public static final int name=0x7f0a0003;
         public static final int number=0x7f0a0004;
         public static final int qcb=0x7f0a0002;
-        public static final int record_detail_description=0x7f0a0012;
-        public static final int record_detail_name=0x7f0a0011;
-        public static final int record_list=0x7f0a0014;
-        public static final int record_name=0x7f0a0013;
+        public static final int record_detail_description=0x7f0a0016;
+        public static final int record_detail_name=0x7f0a0015;
+        public static final int record_list=0x7f0a0018;
+        public static final int record_name=0x7f0a0017;
+        public static final int send_time=0x7f0a000b;
+        public static final int sender_name=0x7f0a000a;
         public static final int slidingview=0x7f0a0006;
-        public static final int textView1=0x7f0a000c;
+        public static final int textView1=0x7f0a0010;
     }
     public static final class integer {
         public static final int password_ems=0x7f070000;
@@ -106,12 +110,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_welcome=0x7f030001;
         public static final int contact_list_item=0x7f030002;
         public static final int contact_list_view=0x7f030003;
-        public static final int event_list_item=0x7f030004;
-        public static final int event_list_view=0x7f030005;
-        public static final int menu_main=0x7f030006;
-        public static final int record_detail=0x7f030007;
-        public static final int record_list_item=0x7f030008;
-        public static final int record_list_view=0x7f030009;
+        public static final int event_detail=0x7f030004;
+        public static final int event_list_item=0x7f030005;
+        public static final int event_list_view=0x7f030006;
+        public static final int menu_main=0x7f030007;
+        public static final int record_detail=0x7f030008;
+        public static final int record_list_item=0x7f030009;
+        public static final int record_list_view=0x7f03000a;
     }
     public static final class menu {
         public static final int main=0x7f090000;
