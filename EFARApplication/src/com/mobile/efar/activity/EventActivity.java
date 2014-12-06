@@ -8,12 +8,9 @@ package com.mobile.efar.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.R.integer;
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
@@ -25,15 +22,10 @@ import com.example.efar.R;
 import com.mobile.efar.adapter.EventAdapter;
 import com.mobile.efar.datamodel.EventModel;
 
-import android.widget.TextView; 
 public class EventActivity extends Activity{
 	//New for receiving SMS from broadcast receiver
 	private static final String LOG_TAG ="SMSReceiver"; 
 	private List<EventModel> list = new ArrayList<EventModel>();
-	private TextView senderName;
-	private TextView sendTime;
-	private TextView address_tag;
-	private TextView body;
 	
 	private ListView lv_list;
 	private EventAdapter mAdapter;
@@ -43,7 +35,6 @@ public class EventActivity extends Activity{
 	private ImageButton imagebutton_contact;
 	private ImageButton imagebutton_record;
 	
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

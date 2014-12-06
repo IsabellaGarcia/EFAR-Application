@@ -18,6 +18,10 @@
     <string name="imagebutton_setting">Setting</string>
     <string name="imageview_contact_photo">Contact Photo</string>
     <string name="contactbtn">Contact List</string>
+    <string name="all_contacts">Go to All Contacts</string>
+    <string name="search_contacts">Search Contacts</string>
+    <string name="done_indetail">Done and Save</string>
+    
     
     <color name="translucence_littledark_orange">#55FFcF9F</color>
     <color name="translucence_dark_orange">#55FF8409</color>

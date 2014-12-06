@@ -11,6 +11,7 @@
         android:layout_centerVertical = "true"
         android:textAppearance="?android:textAppearanceLarge"
         android:textColor="#FFFFFF"
+        android:textSize = "24sp" 
       />
 	  <TextView
         android:id = "@+id/event_time"
@@ -19,5 +20,6 @@
         android:layout_centerVertical = "true"
         android:textAppearance="?android:textAppearanceLarge"
         android:textColor="#FFFFFF"
+        android:textSize = "24sp" 
       />
 </LinearLayout>

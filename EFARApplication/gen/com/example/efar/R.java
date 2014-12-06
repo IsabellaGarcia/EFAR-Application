@@ -75,33 +75,36 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int welcome=0x7f02001c;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a001a;
+        public static final int action_settings=0x7f0a001d;
         public static final int address_tag=0x7f0a000c;
+        public static final int all_contacts=0x7f0a000e;
         public static final int alpha=0x7f0a0001;
         public static final int body=0x7f0a000d;
-        public static final int button_contact=0x7f0a0014;
-        public static final int button_event=0x7f0a0012;
-        public static final int button_record=0x7f0a0013;
-        public static final int button_setting=0x7f0a0015;
+        public static final int button_contact=0x7f0a0017;
+        public static final int button_event=0x7f0a0015;
+        public static final int button_record=0x7f0a0016;
+        public static final int button_setting=0x7f0a0018;
         public static final int contact_list=0x7f0a0007;
         public static final int contact_list_view=0x7f0a0005;
-        public static final int event_list=0x7f0a0010;
-        public static final int event_phone=0x7f0a000e;
-        public static final int event_time=0x7f0a000f;
+        public static final int done_indetail=0x7f0a0010;
+        public static final int event_list=0x7f0a0013;
+        public static final int event_phone=0x7f0a0011;
+        public static final int event_time=0x7f0a0012;
         public static final int fast_position=0x7f0a0009;
         public static final int fast_scroller=0x7f0a0008;
         public static final int framelayout_main=0x7f0a0000;
         public static final int name=0x7f0a0003;
         public static final int number=0x7f0a0004;
         public static final int qcb=0x7f0a0002;
-        public static final int record_detail_description=0x7f0a0017;
-        public static final int record_detail_name=0x7f0a0016;
-        public static final int record_list=0x7f0a0019;
-        public static final int record_name=0x7f0a0018;
+        public static final int record_detail_description=0x7f0a001a;
+        public static final int record_detail_name=0x7f0a0019;
+        public static final int record_list=0x7f0a001c;
+        public static final int record_name=0x7f0a001b;
+        public static final int search_contacts=0x7f0a000f;
         public static final int send_time=0x7f0a000b;
         public static final int sender_name=0x7f0a000a;
         public static final int slidingview=0x7f0a0006;
-        public static final int textView1=0x7f0a0011;
+        public static final int textView1=0x7f0a0014;
     }
     public static final class integer {
         public static final int password_ems=0x7f070000;
@@ -124,11 +127,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
+        public static final int all_contacts=0x7f060011;
         public static final int app_name=0x7f060000;
         public static final int button_login=0x7f060002;
         public static final int button_signup=0x7f060003;
         public static final int button_signup_verify=0x7f060008;
         public static final int contactbtn=0x7f060010;
+        public static final int done_indetail=0x7f060013;
         public static final int edittext_nickname_hint=0x7f060005;
         public static final int edittext_password_again_hint=0x7f060007;
         public static final int edittext_password_hint=0x7f060006;
@@ -139,6 +144,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int imagebutton_location=0x7f06000c;
         public static final int imagebutton_setting=0x7f06000e;
         public static final int imageview_contact_photo=0x7f06000f;
+        public static final int search_contacts=0x7f060012;
         public static final int textview_title_0=0x7f06000a;
     }
     public static final class style {
