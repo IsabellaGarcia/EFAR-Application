@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="UTF-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"   
     android:background="@drawable/welcome" >
@@ -35,7 +34,5 @@
         android:layout_below ="@+id/address_tag"
         android:layout_marginTop="5dp"/>
 	
-	       <!-- maintain menu bar--> 
-    <include
-        layout="@layout/menu_main" />
+
 </RelativeLayout>

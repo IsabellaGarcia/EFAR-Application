@@ -51,6 +51,10 @@
         <activity
             android:name="com.mobile.efar.activity.ContactListActivity">
         </activity>
+        <activity
+            android:name="com.mobile.efar.activity.EventDetail">
+        </activity>
+        
         
         <!-- BroadcastReceiver List -->
         <receiver 

@@ -49,12 +49,13 @@ public class EventAdapter extends BaseAdapter{
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View view = View.inflate(mContext, R.layout.event_list_item, null);
-		EventModel event = mData.get(position);
-		
+		EventModel event = mData.get(position);	
 		//Initialize view
-		TextView event_name = (TextView)view.findViewById(R.id.event_name);	
+		TextView event_phone = (TextView)view.findViewById(R.id.event_phone);	
+		TextView event_time = (TextView)view.findViewById(R.id.event_time);	
 		//Dynamically bind data to view
-		//event_name.setText(event.getEvent_name());
+		event_phone.setText(event.getPhone());
+		event_time.setText(event.getTime());
 		//return the final view
 		return view;
 	}
