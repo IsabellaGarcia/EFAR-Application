@@ -23,6 +23,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -35,6 +37,8 @@ public class EventActivity extends Activity{
 	private static final String queryString = "@";
 	private ImageButton imagebutton_contact;
 	private ImageButton imagebutton_record;
+	private String[] messeges;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -106,7 +110,7 @@ public class EventActivity extends Activity{
 		smsBuilder.append("no result!"); 
 		} 
 	
-		smsBuilder.append("getSmsInPhone has executed!"); 
+		//smsBuilder.append("getSmsInPhone has executed!"); 
 		} catch(SQLiteException ex) { 
 		Log.d("SQLiteException in getSmsInPhone", ex.getMessage()); 
 		} 
@@ -116,10 +120,10 @@ public class EventActivity extends Activity{
 	//Get separated SMS and store in list
 	private List<EventModel> getSeparateSMS(String S){
 		
-		String[] messeges = S.split("&");
+		messeges = S.split("&");
 		for(int j = 0; j<messeges.length; j++){
-			String[] info = messeges[0].split("#");
-			if(info[2].startsWith(queryString)){
+			String[] info = messeges[j].split("#");
+			//if(info[2].startsWith(queryString)){
 				EventModel event1= new EventModel();
 				//event1.setId(i);
 				event1.setPhone(info[0]);
@@ -135,17 +139,19 @@ public class EventActivity extends Activity{
 				//body = (TextView)findViewById(R.id.body);
 				//body.setText(event1.getDescription());
 				list.add(event1);
-			}
+			//}
 			
 		}
 		return list;
 	}
 
+	//Initialization of layout
 	private void layout(){
 		lv_list = (ListView)findViewById(R.id.event_list);
-		mAdapter = new EventAdapter(this, getSeparateSMS(allSMS));
-		lv_list.setAdapter(mAdapter);
-		
+		if(allSMS!="no result"){
+			mAdapter = new EventAdapter(this, getSeparateSMS(allSMS));
+			lv_list.setAdapter(mAdapter);
+		}
 		imagebutton_record = (ImageButton) findViewById(R.id.button_record);
 		imagebutton_record.setOnClickListener(new OnClickListener(){
 				@Override
@@ -167,6 +173,31 @@ public class EventActivity extends Activity{
 				startActivity(intent);
 				finish();
 			}
-		});	
+		});
+		//Click on ListView
+		lv_list.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				 Intent in = new Intent(EventActivity.this,EventDetail.class);
+				 Bundle bundle2 = new Bundle();
+				 StringBuilder sb = new StringBuilder();
+				 sb.append(messeges[position]);
+				 sb.append("&");
+				 ArrayList<String> list_t=new ArrayList<String>(); 
+				 list_t.add(sb.toString());
+				 bundle2.putStringArrayList("message", list_t);			 
+				 in.putExtras(bundle2);
+			     //destroy other activities
+				 //in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				 startActivity(in); 				
+			}
+		});
+		
 	}
+	
+	
+	
 }
