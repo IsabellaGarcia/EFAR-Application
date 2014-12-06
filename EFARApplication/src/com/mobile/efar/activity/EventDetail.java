@@ -35,7 +35,7 @@ public class EventDetail extends Activity{
 @Override
 protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
-	setTitle("Emergency Events List");
+	setTitle("Event Detail");
 	setContentView(R.layout.event_detail); 
 	Layout();
 }

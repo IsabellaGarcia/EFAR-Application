@@ -3,43 +3,83 @@
     android:layout_height="match_parent"   
     android:background="@drawable/welcome" >
     
+    
     <TextView
-        android:id="@+id/sender_name"
+        android:id="@+id/from"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize = "20sp"
+        android:text = "FROM:"/>
+    
+    <TextView
+        android:id="@+id/sender_name"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="10dp"
         android:textSize = "20sp"/>
+    
+    	<TextView
+        android:id="@+id/Time"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_below ="@+id/sender_name"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize = "20sp"
+         android:textStyle="bold"
+        android:text = "TIME:"/>
+	
     
 	<TextView
         android:id="@+id/send_time"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:layout_below ="@+id/sender_name"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="10dp"
         android:textSize = "20sp"/>
+	
+	<TextView
+        android:id="@+id/dis"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_below ="@+id/send_time"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize = "20sp"
+        android:gravity = "center"
+        android:textStyle="bold"
+        android:text = "DISCRIPTION"/>
 	
 	<TextView
         android:id="@+id/address_tag"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:layout_below ="@+id/send_time"
+        android:layout_below ="@+id/dis"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:textSize = "20sp"/>
 	
 	<TextView
         android:id="@+id/body"
-        android:layout_height="300dp"
+        android:layout_height="235dp"
         android:layout_width="fill_parent"
+         android:layout_marginLeft="10dp"
         android:layout_below ="@+id/address_tag"
         android:layout_marginTop="5dp"
         android:textSize = "20sp"/>
 	<Button
 	    android:id="@+id/all_contacts"
 	    android:layout_below="@+id/body"
+	    android:layout_marginLeft="10dp"
 	    android:layout_height="70dp"
         android:layout_width="100dp"
         android:text="@string/all_contacts"
