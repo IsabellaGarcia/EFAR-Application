@@ -80,7 +80,14 @@ public class ReceiverSMS extends BroadcastReceiver{
 						 sb.append(body1);
 						 sb.append("&");
 						 list.add(sb.toString());
-						
+						 Intent in = new Intent(context,EventDetail.class);
+						 Bundle bundle2 = new Bundle();
+						 bundle2.putStringArrayList("message", list);
+						 
+						 in.putExtras(bundle2);
+					     //destroy other activities
+						 in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+						 context.startActivity(in);
 						
 						//FOR RECORD
 						//Log.i(ReceiverSMS.LOG_TAG, "[EFAR] onReceiveIntent0: "+ sb); 
@@ -98,14 +105,7 @@ public class ReceiverSMS extends BroadcastReceiver{
 				 //Already process all SMS
 				 //Activate EventActivity
 				//abortBroadcast();
-				 Intent in = new Intent(context,EventDetail.class);
-				 Bundle bundle2 = new Bundle();
-				 bundle2.putStringArrayList("message", list);
-				 
-				 in.putExtras(bundle2);
-			     //destroy other activities
-				 in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				 context.startActivity(in);
+
 				//FOR RECORD
 				//Log.i(ReceiverSMS.LOG_TAG, "[EFAR] onReceiveIntent0 Over: "); */	
 	
