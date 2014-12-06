@@ -1,3 +1,4 @@
+
 package com.mobile.efar.datamodel;
 
 public class ContactModel {
