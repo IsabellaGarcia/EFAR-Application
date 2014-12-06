@@ -124,7 +124,7 @@ public class EventActivity extends Activity{
 		messeges = S.split("&");
 		for(int j = 0; j<messeges.length; j++){
 			String[] info = messeges[j].split("#");
-			if(info[2].startsWith(queryString)){
+			//if(info[2].startsWith(queryString)){
 				EventModel event1= new EventModel();
 				//event1.setId(i);
 				event1.setPhone(info[0]);
@@ -140,9 +140,9 @@ public class EventActivity extends Activity{
 				//body = (TextView)findViewById(R.id.body);
 				//body.setText(event1.getDescription());
 				list.add(event1);
-				finalMesseges[index] = messeges[j];
-				index++;
-			}
+				//finalMesseges[index] = messeges[j];
+				//index++;
+			//}
 			
 		}
 		return list;
