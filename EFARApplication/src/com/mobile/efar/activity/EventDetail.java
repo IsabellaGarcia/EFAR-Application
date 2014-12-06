@@ -1,3 +1,9 @@
+/** 
+* Created by Xinyi HUANG
+* Created Date: 06/12/2014
+* Description: Activity for One Event
+*/
+
 package com.mobile.efar.activity;
 
 import java.util.ArrayList;

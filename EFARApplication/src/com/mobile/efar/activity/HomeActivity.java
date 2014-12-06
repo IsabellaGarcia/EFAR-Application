@@ -23,6 +23,7 @@ public class HomeActivity extends Activity{
 	private ImageButton imagebutton_contact;
 	private ImageButton imagebutton_event;
 	private ImageButton imagebutton_record;
+	private ImageButton test;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -62,5 +63,17 @@ public class HomeActivity extends Activity{
 				startActivity(intent);
 			}
 		});
+		
+
+		test = (ImageButton) findViewById(R.id.button_setting);
+		test.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent();
+				intent.setClass(HomeActivity.this, testActivity.class);
+				startActivity(intent);
+			}
+		});
+		
 	}
 }

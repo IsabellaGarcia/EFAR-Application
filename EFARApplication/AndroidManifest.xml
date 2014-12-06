@@ -4,6 +4,8 @@
     android:versionCode="1"
     android:versionName="1.0" >
     
+     <!-- Permission List -->
+    
 	 <!-- Permission to read contacts -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <!-- Permission to write contacts -->
@@ -14,6 +16,8 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <!-- Permission to receive sms -->
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+     <!-- Permission to write sms -->
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
     
     <uses-sdk
         android:minSdkVersion="8"
@@ -24,6 +28,8 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        
+        
         <!-- Activities List -->
         <activity
             android:name="com.mobile.efar.activity.WelcomeActivity"
@@ -54,7 +60,10 @@
         <activity
             android:name="com.mobile.efar.activity.EventDetail">
         </activity>
-        
+         <activity
+            android:name="com.mobile.efar.activity.testActivity">
+        </activity>
+       
         
         <!-- BroadcastReceiver List -->
         <receiver 
