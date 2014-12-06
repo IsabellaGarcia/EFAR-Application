@@ -61,7 +61,7 @@
             android:name="com.mobile.efar.activity.EventDetail">
         </activity>
          <activity
-            android:name="com.mobile.efar.activity.testActivity">
+            android:name="com.mobile.efar.activity.EventActivity">
         </activity>
        
         

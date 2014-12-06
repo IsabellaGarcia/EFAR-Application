@@ -70,7 +70,7 @@ public class HomeActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent();
-				intent.setClass(HomeActivity.this, testActivity.class);
+				intent.setClass(HomeActivity.this, EventActivity.class);
 				startActivity(intent);
 			}
 		});

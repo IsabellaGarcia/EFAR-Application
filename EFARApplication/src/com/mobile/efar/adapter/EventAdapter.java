@@ -54,7 +54,7 @@ public class EventAdapter extends BaseAdapter{
 		TextView event_phone = (TextView)view.findViewById(R.id.event_phone);	
 		TextView event_time = (TextView)view.findViewById(R.id.event_time);	
 		//Dynamically bind data to view
-		event_phone.setText(event.getPhone());
+		event_phone.setText(event.getAddress_tag());
 		event_time.setText(event.getTime());
 		//return the final view
 		return view;

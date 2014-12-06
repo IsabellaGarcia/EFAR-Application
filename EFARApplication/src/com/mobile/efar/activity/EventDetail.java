@@ -57,7 +57,7 @@ protected void onStart(){
 			 * info[2]: @tag
 			 * info[3]: body
 			 */
-			String[] info = messeges[0].split("#");
+			String[] info = messeges[j].split("#");
 			EventModel event1 = new EventModel();
 			//NEED TO MODIFY
 			int i = 0;

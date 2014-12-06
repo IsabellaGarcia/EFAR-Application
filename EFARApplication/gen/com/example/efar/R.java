@@ -87,6 +87,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int contact_list=0x7f0a0007;
         public static final int contact_list_view=0x7f0a0005;
         public static final int done_indetail=0x7f0a0010;
+        public static final int event_element=0x7f0a0014;
         public static final int event_list=0x7f0a0013;
         public static final int event_phone=0x7f0a0011;
         public static final int event_time=0x7f0a0012;
@@ -104,7 +105,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int send_time=0x7f0a000b;
         public static final int sender_name=0x7f0a000a;
         public static final int slidingview=0x7f0a0006;
-        public static final int textView1=0x7f0a0014;
     }
     public static final class integer {
         public static final int password_ems=0x7f070000;
