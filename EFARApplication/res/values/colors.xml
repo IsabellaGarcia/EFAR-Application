@@ -1,5 +1,16 @@
 <resources>
 
     <color name="black_overlay">#66000000</color>
+    <color name="half_gray">#66888888</color>
+    <color name="pure_black">#000000</color>
+    <color name="lightBlue_tm">#7FD0F2EE</color>
+    <color name="waterMelonRed">#EA7564</color>
+    <color name="warmBrown">#B97A57</color>
+    <color name="lightBrown">#CD9F87</color>
+    <color name="lightGray_tm">#C8C3C3C3</color>
+    <color name="darkRed">#E1B26A6A</color>
+    <color name="lightGray">#FFC3C3C3</color>
+    <color name="halfGray">#7F7F7F</color>
+    <color name="seaBlue">#219AC6</color>  
 
 </resources>

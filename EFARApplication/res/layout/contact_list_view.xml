@@ -6,7 +6,7 @@
     android:background="#000000"
     android:orientation="vertical" >
 
-    <com.mobile.efar.view.SlidingLinearLayout
+    <com.efar.view.SlidingLinearLayout
         android:id="@+id/slidingview"
         android:layout_width="match_parent"
         android:layout_height="380dip"
@@ -22,9 +22,9 @@
             android:scrollbars="none"
             android:scrollingCache="false"
             android:visibility="visible" />
-    </com.mobile.efar.view.SlidingLinearLayout>
+    </com.efar.view.SlidingLinearLayout>
 
-    <com.mobile.efar.view.QuickAlphabeticBar
+    <com.efar.view.QuickAlphabeticBar
         android:id="@+id/fast_scroller"
         android:layout_width="22dp"
         android:layout_height="380dip"
@@ -34,7 +34,7 @@
         android:background="@null"
         android:scaleType="centerInside"
         android:src="@drawable/dic_background" >
-    </com.mobile.efar.view.QuickAlphabeticBar>
+    </com.efar.view.QuickAlphabeticBar>
 
     <TextView
         android:id="@+id/fast_position"

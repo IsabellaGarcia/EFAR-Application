@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<LinearLayout  
+  	xmlns:android="http://schemas.android.com/apk/res/android"  
+  	android:orientation="horizontal"  
+  	android:layout_width="fill_parent"  
+  	android:layout_height="fill_parent"  
+  	android:background="@android:color/transparent" >  
+	<RelativeLayout    
+        android:orientation="horizontal"    
+        android:layout_width="fill_parent"    
+        android:layout_height="fill_parent"    
+        android:background="@android:color/transparent"    
+        android:padding="6dp" >    
+  			 
+  			<TextView android:id="@+id/efar_list_name"  
+    			android:layout_alignParentLeft="true"
+        		android:layout_alignParentTop="true"
+    			android:layout_width="wrap_content"  
+     			android:layout_height="wrap_content"
+     			android:textColor="@color/pure_black"
+     			android:textSize="20sp" >  
+  			</TextView> 
+  			
+  			<TextView android:id="@+id/efar_list_address_tag"  
+  			    android:layout_toRightOf="@+id/efar_list_name"
+  			    android:layout_alignBottom="@+id/efar_list_name"
+  			    android:layout_marginLeft="10dp"
+    			android:layout_width="wrap_content"  
+     			android:layout_height="wrap_content"
+     			android:textColor="@color/half_gray"
+     			android:textSize="15sp" >
+  			</TextView>
+  			
+  			<TextView android:id="@+id/efar_list_skill_tag"  
+  			    android:layout_below="@+id/efar_list_name"
+  			    android:layout_marginTop="2dp"
+    			android:layout_width="wrap_content"  
+     			android:layout_height="wrap_content"
+     			android:textColor="@color/half_gray"
+     			android:textSize="15sp" >
+  			</TextView>
+
+  			<CheckBox
+  			    android:id="@+id/select_this_efar"
+  			    android:layout_alignParentRight="true"
+  			    android:layout_centerHorizontal="true"
+        		android:layout_alignParentTop="true"
+  			    android:layout_width="wrap_content"
+  			    android:layout_height="wrap_content" />
+  			
+  	</RelativeLayout>
+  	  
+</LinearLayout> 

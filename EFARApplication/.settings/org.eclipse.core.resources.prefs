@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
-encoding//src/com/mobile/efar/database/DatabaseOpener.java=UTF-8
+encoding//src/com/efar/activity/EfarListActivity.java=UTF-8
+encoding//src/com/efar/adapter/EfarAdapter.java=UTF-8
+encoding//src/com/efar/database/DatabaseOpener.java=UTF-8

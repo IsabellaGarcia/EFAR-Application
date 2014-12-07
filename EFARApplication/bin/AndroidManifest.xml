@@ -32,7 +32,7 @@
         
         <!-- Activities List -->
         <activity
-            android:name="com.mobile.efar.activity.WelcomeActivity"
+            android:name="com.efar.activity.WelcomeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@style/FullscreenTheme" >
@@ -42,32 +42,32 @@
             </intent-filter>
         </activity>
         <activity 
-            android:name="com.mobile.efar.activity.HomeActivity"
+            android:name="com.efar.activity.HomeActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.mobile.efar.activity.ContactActivity">
+            android:name="com.efar.activity.ContactActivity">
         </activity>
         <activity
-            android:name="com.mobile.efar.activity.EventActivity">
+            android:name="com.efar.activity.EventActivity">
         </activity>
         <activity
-            android:name="com.mobile.efar.activity.RecordActivity">
+            android:name="com.efar.activity.RecordActivity">
         </activity>
         <activity
-            android:name="com.mobile.efar.activity.ContactListActivity">
+            android:name="com.efar.activity.ContactListActivity">
         </activity>
         <activity
-            android:name="com.mobile.efar.activity.EventDetail">
+            android:name="com.efar.activity.EventDetail">
         </activity>
          <activity
-            android:name="com.mobile.efar.activity.EventActivity">
+            android:name="com.efar.activity.EventActivity">
         </activity>
        
         
         <!-- BroadcastReceiver List -->
         <receiver 
-            android:name = "com.mobile.efar.broadcastReceiver.ReceiverSMS"
+            android:name = "com.efar.broadcastReceiver.ReceiverSMS"
             android:enabled="true">
             <intent-filter>
                 <action android:name = "android.provider.Telephony.SMS_RECEIVED"/>
