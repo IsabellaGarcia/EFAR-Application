@@ -1,4 +1,5 @@
 /**
+ * < No Use >
  * Created by Michyo SONG
  * Created Date: 28/11/2014
  * Description: Database operations help,
@@ -15,14 +16,10 @@ import java.util.Vector;
 import com.efar.database.DatabaseOpener;
 import com.efar.datamodel.EfarModel;
 
-import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.ContentValues;
-import android.content.CursorLoader;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Build;
 import static android.provider.BaseColumns._ID;
 
 public class DatabaseHelper {
@@ -33,14 +30,6 @@ public class DatabaseHelper {
 	public DatabaseHelper(Context c) {
 		activity_context = c;
 		openDatabase();
-	}
-	
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 	}
 	
 	private void openDatabase(){
@@ -69,15 +58,16 @@ public class DatabaseHelper {
     		efar.setId(cursor.getInt(0));
     		efar.setName(cursor.getString(1));
     		efar.setPhone(cursor.getString(2));
-    		efar.setAddress_tag(cursor.getString(3));
-    		efar.setTime_available(cursor.getString(4));
-    		efar.setSkill_available(cursor.getString(5));
+    		efar.setAddressTag(cursor.getString(3));
+    		efar.setTimeAvailable(cursor.getString(4));
+    		efar.setSkillAvailable(cursor.getString(5));
     		result.add(efar);
     	}    	
     	db.close();
     	return result;
 	}
 
+	/*
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@SuppressLint("NewApi")
 	private Cursor getEfarCursor(String table_name) {
@@ -86,15 +76,30 @@ public class DatabaseHelper {
         Cursor cursor = db.query(table_name, columns, null, null, null, null, null);
         CursorLoader cursor_loader = new CursorLoader(activity_context);
         cursor_loader.deliverResult(cursor);
-        db.close();
+        // db.close();
         return cursor;
-    }
+    }*/
     
-	public Cursor getById(String table_name, int id) {
+    /**
+     * Reduct from a cursor to build a class of EfarModel.
+     * @param table_name
+     * @param id
+     * @return
+     */
+	public EfarModel getEfarById(int id) {
     	SQLiteDatabase db = db_opener.getReadableDatabase();  
-        Cursor cursor = db.query(table_name, null, _ID + "=?", new String[]{String.valueOf(id)}, null, null, null);  
-        db.close();
-        return cursor;
+        Cursor cursor = db.query(TABLE_BLOCK_EFARS, null, _ID + "=?", new String[]{String.valueOf(id)}, null, null, null);  
+        EfarModel result = new EfarModel();
+		if(cursor != null && cursor.moveToFirst()){   
+            result.setId(cursor.getInt(cursor.getColumnIndex(_ID)));  
+            result.setName(cursor.getString(cursor.getColumnIndex(NAME)));
+            result.setPhone(cursor.getString(cursor.getColumnIndex(PHONE)));
+            result.setAddressTag(cursor.getString(cursor.getColumnIndex(ADDRESS_TAG)));
+            result.setTimeAvailable(cursor.getString(cursor.getColumnIndex(TIME_AVAILABLE)));
+            result.setSkillAvailable(cursor.getString(cursor.getColumnIndex(SKILL_AVAILABLE)));
+        }  
+		db.close();
+        return result;  
     }
 
 	public void delete(String table_name, int id) {

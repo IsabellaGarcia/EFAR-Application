@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.efar.global;
+package com.efar.application;
 
 import java.util.Vector;
 
@@ -15,8 +15,9 @@ import com.efar.datamodel.*;
  * 			 	in every where when the application is running.
  */
 
-public class GlobalVariables extends Application {
+public class EfarApplication extends Application {
 	
+	// Global variables.
 	private Vector<EventModel> events;
 	private EventModel eventNow;
 

@@ -19,7 +19,7 @@
   	<ListView   
    		android:id="@android:id/list"  
     	android:layout_width="fill_parent"  
-    	android:layout_height="450dp"
+    	android:layout_height="550dp"
     	android:background="@android:color/transparent"
     	android:cacheColorHint="@android:color/transparent" >  
   	</ListView>  
@@ -34,15 +34,15 @@
     	<Button       
     		android:id="@+id/buttonSelectEfar"  
     		style="@style/Button"  
-    		android:layout_width="160dp"      
-    		android:layout_height="30dp"      
+    		android:layout_width="200dp"      
+    		android:layout_height="wrap_content"      
     		android:text="@string/button_confirm" />  
     		
     	<Button       
     		android:id="@+id/buttonCancelEfar" 
     		style="@style/Button"     
-    		android:layout_width="160dp"      
-    		android:layout_height="30dp"      
+    		android:layout_width="200dp"      
+    		android:layout_height="wrap_content"      
     		android:text="@string/button_cancel" />        
   	</LinearLayout>  
 </LinearLayout>  

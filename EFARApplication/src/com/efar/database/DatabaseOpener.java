@@ -1,4 +1,5 @@
 /**
+ * < No Use >
  * Created by Michyo SONG
  * Created Date: 28/11/2014
  * Description: Database helper extends from SQLiteOpenHelper.
@@ -7,7 +8,6 @@
 package com.efar.database;
 
 import static com.efar.database.DatabaseConstants.*;
-import static android.provider.BaseColumns._ID;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,7 +15,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseOpener extends SQLiteOpenHelper {
 	
-    private final static String DATABASE_NAME = "test.db";
     private final static int DATABASE_VERSION = 2;
     
 	public DatabaseOpener(Context context) {
@@ -25,16 +24,16 @@ public class DatabaseOpener extends SQLiteOpenHelper {
 	
 	@Override
     public void onCreate(SQLiteDatabase db) {
-        final String INIT_EFAR_TABLE = "CREATE TABLE " + TABLE_BLOCK_EFARS + " (" +
-                                  _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        final String INIT_EFAR_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_BLOCK_EFARS + " (" +
+                                  ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                                   NAME + " CHAR, " +
                                   PHONE + " CHAR, " +
                                   ADDRESS_TAG + " CHAR, " +
                                   TIME_AVAILABLE + " CHAR, " +
                                   SKILL_AVAILABLE + " CHAR);"; 
         db.execSQL(INIT_EFAR_TABLE);
-        final String INIT_EVENT_TABLE = "CREATE TABLE " + TABLE_EVENTS + " (" +
-                _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        final String INIT_EVENT_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_EVENTS + " (" +
+                ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 EVENT_NAME + " CHAR, " +
                 EFAR_ID + " INTEGER);"; 
         db.execSQL(INIT_EVENT_TABLE);

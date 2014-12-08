@@ -28,7 +28,6 @@ import com.example.efar.R;
 
 
 import static com.efar.database.DatabaseConstants.*;
-import static com.efar.datamodel.EfarModel.reductEfar;
 
 public class RecordActivity extends Activity{
 	private ListView lv_list;

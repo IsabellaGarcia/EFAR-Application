@@ -8,10 +8,23 @@
 package com.efar.database;
 
 public class DatabaseConstants {
+	
+	/**
+	 * These constants point out location of database.
+	 */
+	public static final String DATABASE_PATH = android.os.Environment
+    .getExternalStorageDirectory().getAbsolutePath() + "/efar_database";
+	
+	public static final String DATABASE_NAME = "efar.sqlite";
+	
+	public static String getDatabaseFullPath() {
+		return DATABASE_PATH + DATABASE_NAME;
+	}
 
 	/**
 	 * These constants are related with EFAR table.
 	 */
+	public static final String ID = "id";
 	public static final String TABLE_BLOCK_EFARS = "block_efars";
 	public static final String NAME = "name";
 	public static final String PHONE = "phone";

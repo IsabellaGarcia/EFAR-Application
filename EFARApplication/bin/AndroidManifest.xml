@@ -16,7 +16,7 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <!-- Permission to receive sms -->
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
-     <!-- Permission to write sms -->
+    <!-- Permission to write sms -->
     <uses-permission android:name="android.permission.WRITE_SMS"/>
     
     <uses-sdk
@@ -24,6 +24,7 @@
         android:targetSdkVersion="16" />
 
     <application
+        android:name="com.efar.application.EfarApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -60,10 +61,21 @@
         <activity
             android:name="com.efar.activity.EventDetail">
         </activity>
-         <activity
-            android:name="com.efar.activity.EventActivity">
+        <activity
+            android:name="com.efar.activity.EfarListActivity">
         </activity>
        
+        <!-- ContentProvider List -->
+        <provider
+            android:name="com.efar.contentProvider.EfarProvider"
+            android:authorities="com.efar.contentProvider"
+            android:multiprocess="false" >
+        </provider>
+        <provider
+            android:name="com.efar.contentProvider.EventProvider"
+            android:authorities="com.efar.contentProvider"
+            android:multiprocess="false" >
+        </provider>
         
         <!-- BroadcastReceiver List -->
         <receiver 
