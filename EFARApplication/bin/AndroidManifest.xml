@@ -8,17 +8,17 @@
     
 	 <!-- Permission to read contacts -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <!-- Permission to write contacts -->
+     <!-- Permission to write contacts -->
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
-    <!-- Permission to call phone-->
+     <!-- Permission to call phone-->
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <!-- Permission to read sms-->
+     <!-- Permission to read sms-->
     <uses-permission android:name="android.permission.READ_SMS" />
-    <!-- Permission to receive sms -->
+     <!-- Permission to receive sms -->
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
-    <!-- Permission to write sms -->
+     <!-- Permission to write sms -->
     <uses-permission android:name="android.permission.WRITE_SMS"/>
-    
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="16" />

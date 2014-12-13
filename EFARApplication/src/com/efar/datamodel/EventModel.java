@@ -13,6 +13,7 @@ public class EventModel {
 	private String time;
 	private String address_tag;
 	private String description;
+	private String send_list;  //send out SMS contacts list
 	
 	//private String event_name;
 	private int[] efars;
