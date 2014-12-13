@@ -1,5 +1,5 @@
 /** 
-* Created by Xinyi HUANG
+* @author Xinyi HUANG
 * Created Date: 06/12/2014
 * Description: Activity for One Event
 */

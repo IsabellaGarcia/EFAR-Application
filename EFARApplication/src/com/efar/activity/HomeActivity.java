@@ -1,5 +1,5 @@
 /** 
-* Created by Xinyi HUANG
+* @author Xinyi HUANG
 * Created Date: 26/11/2014
 * Description: Home Activity(Main Activity)
 * 			   Link to ContactActivity/EventActivity/RecordActivity

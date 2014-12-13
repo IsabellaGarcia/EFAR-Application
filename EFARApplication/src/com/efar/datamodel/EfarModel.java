@@ -6,6 +6,10 @@
 
 package com.efar.datamodel;
 
+/**
+ * @author HUANG Xinyi
+ */
+
 public class EfarModel {
 	
 	private int id;
