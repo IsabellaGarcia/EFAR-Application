@@ -37,7 +37,6 @@
          android:textStyle="bold"
         android:text = "TIME:"/>
 	
-    
 	<TextView
         android:id="@+id/send_time"
         android:layout_height="wrap_content"
@@ -70,15 +69,25 @@
 	
 	<TextView
         android:id="@+id/body"
-        android:layout_height="235dp"
+        android:layout_height="190dp"
         android:layout_width="fill_parent"
          android:layout_marginLeft="10dp"
         android:layout_below ="@+id/address_tag"
         android:layout_marginTop="5dp"
         android:textSize = "20sp"/>
+	
+	<TextView
+        android:id="@+id/volunteer"
+        android:layout_height="50dp"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_below ="@+id/body"
+        android:layout_marginTop="5dp"
+        android:textSize = "20sp"/>
+	
 	<Button
 	    android:id="@+id/all_contacts"
-	    android:layout_below="@+id/body"
+	    android:layout_below="@+id/volunteer"
 	    android:layout_marginLeft="10dp"
 	    android:layout_height="70dp"
         android:layout_width="100dp"
@@ -90,7 +99,7 @@
 	    android:layout_toRightOf="@+id/all_contacts"
 	    android:layout_height="70dp"
         android:layout_width="100dp"
-        android:layout_below="@+id/body"
+        android:layout_below="@+id/volunteer"
         android:text="@string/search_contacts"
 	 />
 	
@@ -99,7 +108,7 @@
 	     android:layout_toRightOf="@+id/search_contacts"
 	    android:layout_height="70dp"
         android:layout_width="100dp"
-        android:layout_below="@+id/body"
+        android:layout_below="@+id/volunteer"
         android:text="@string/done_indetail"
 	 />
 
