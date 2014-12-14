@@ -8,6 +8,7 @@ import static com.efar.database.DatabaseConstants.*;
 import java.util.Vector;
 
 import com.efar.datamodel.EfarModel;
+import com.efar.datamodel.EventModel;
 import com.efar.datamodel.RecordModel;
 
 import android.content.ContentValues;
@@ -76,6 +77,34 @@ public class EmbededDatabase {
     	}    	
     	embededDatabase.close();
     	return result;
+	}
+	
+	public Vector<EfarModel> getEfarBySkill(String skill) {
+		Vector<EfarModel> result = new Vector<EfarModel>();
+    	Cursor cursor = embededDatabase.rawQuery("select * from "+ TABLE_BLOCK_EFARS + 
+    			" where "+ SKILL_AVAILABLE +" = ? ",
+    			new String[]{skill.trim()});
+    	while(cursor.moveToNext()){
+    		EfarModel efar = new EfarModel();
+    		efar.setId(cursor.getInt(0));
+    		efar.setName(cursor.getString(1));
+    		efar.setPhone(cursor.getString(2));
+    		efar.setAddressTag(cursor.getString(3));
+    		efar.setTimeAvailable(cursor.getString(4));
+    		efar.setSkillAvailable(cursor.getString(5));
+    		result.add(efar);
+    	}    	
+    	embededDatabase.close();
+    	return result;
+	}
+	
+	public void addRecord(EventModel event) {
+		String event_name = event.getPhone() + "@" + event.getTime();
+		ContentValues values = new ContentValues();
+		values.put(EVENT_NAME, event_name);
+		values.put(RELATED_EFARS, event.getRelatedEfars());
+		values.put(EVENT_DETAIL, event.generateDetail());
+		embededDatabase.insert(TABLE_RECORDS, null, values);
 	}
 	
 	public Vector<RecordModel> getAllRecords() {

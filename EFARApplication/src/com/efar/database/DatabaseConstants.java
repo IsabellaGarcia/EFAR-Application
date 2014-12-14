@@ -46,7 +46,6 @@ public class DatabaseConstants {
 	 */
 	public static final String TABLE_RECORDS = "records";
 	// public static final String EVENT_NAME = "event_name";
-	public static final String EVENT_DETAIL = "event_detail";
 	public static final String RELATED_EFARS = "related_efars";
-
+	public static final String EVENT_DETAIL = "event_detail";
 }

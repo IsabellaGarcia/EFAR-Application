@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-=======
-/** 
-* @author Xinyi HUANG
-* Created Date: 25/11/2014
-* Description: Data model for RecordActivity.java & RecordAdapter
-*/
->>>>>>> FETCH_HEAD
+
 package com.efar.datamodel;
 
 import java.util.Vector;

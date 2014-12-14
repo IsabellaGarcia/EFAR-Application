@@ -15,11 +15,8 @@ public class EventModel {
 	private String time;
 	private String address_tag;
 	private String description;
-<<<<<<< HEAD
 	private Vector<String> relatedEfarsVector;
-=======
 	private String send_list;  //send out SMS contacts list
->>>>>>> FETCH_HEAD
 	
 	//private String event_name;
 	private int[] efars;
@@ -139,6 +136,14 @@ public class EventModel {
 	
 	public void deleteEfar(EfarModel efar) {
 		this.relatedEfarsVector.remove(efar.getName());
+	}
+	
+	public String generateDetail() {
+		String result = "From: " + phone + "\n"
+				+ "When: " + time + "\n" 
+				+ "At:" + address_tag + "\n"
+				+ "Description:" + description;
+		return result;
 	}
  
 }
