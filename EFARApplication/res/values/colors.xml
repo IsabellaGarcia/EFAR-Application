@@ -1,7 +1,7 @@
 <resources>
 
     <color name="black_overlay">#66000000</color>
-    <color name="half_gray">#66888888</color>
+    <color name="half_gray">#888888</color>
     <color name="pure_black">#000000</color>
     <color name="lightBlue_tm">#7FD0F2EE</color>
     <color name="waterMelonRed">#EA7564</color>

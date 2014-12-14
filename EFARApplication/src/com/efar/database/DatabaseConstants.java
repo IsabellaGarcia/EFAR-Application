@@ -12,13 +12,15 @@ public class DatabaseConstants {
 	/**
 	 * These constants point out location of database.
 	 */
+	private final static int DATABASE_VERSION = 3;
+	
 	public static final String DATABASE_PATH = android.os.Environment
-    .getExternalStorageDirectory().getAbsolutePath() + "/efar_database";
+    .getExternalStorageDirectory().getAbsolutePath() + "/efar_test";
 	
 	public static final String DATABASE_NAME = "efar.sqlite";
 	
 	public static String getDatabaseFullPath() {
-		return DATABASE_PATH + DATABASE_NAME;
+		return DATABASE_PATH + DATABASE_VERSION + DATABASE_NAME;
 	}
 
 	/**
@@ -33,10 +35,18 @@ public class DatabaseConstants {
 	public static final String SKILL_AVAILABLE = "skill_available";
 	
 	/**
-	 * These constants are related with Event record table.
+	 * These constants are related with Event-Efars table.
 	 */
-	public static final String TABLE_EVENTS = "events_records";
+	public static final String TABLE_EVENTS = "events_efars";
 	public static final String EVENT_NAME = "event_name";
 	public static final String EFAR_ID = "efar_id";
+	
+	/**
+	 * These constants are related with Records table.
+	 */
+	public static final String TABLE_RECORDS = "records";
+	// public static final String EVENT_NAME = "event_name";
+	public static final String EVENT_DETAIL = "event_detail";
+	public static final String RELATED_EFARS = "related_efars";
 
 }

@@ -15,7 +15,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseOpener extends SQLiteOpenHelper {
 	
-    private final static int DATABASE_VERSION = 2;
+    private final static int DATABASE_VERSION = 3;
     
 	public DatabaseOpener(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -37,6 +37,11 @@ public class DatabaseOpener extends SQLiteOpenHelper {
                 EVENT_NAME + " CHAR, " +
                 EFAR_ID + " INTEGER);"; 
         db.execSQL(INIT_EVENT_TABLE);
+        final String INIT_RECORD_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_RECORDS + " (" +
+                ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                EVENT_NAME + " CHAR, " +
+                EVENT_DETAIL + " CHAR);"; 
+        db.execSQL(INIT_RECORD_TABLE);
     }
 	
 	@Override
@@ -48,6 +53,8 @@ public class DatabaseOpener extends SQLiteOpenHelper {
         db.execSQL(DROP_EFAR_TABLE);
         final String DROP_EVENT_TABLE = "DROP TABLE IF EXISTS " + TABLE_EVENTS;
         db.execSQL(DROP_EVENT_TABLE);
+        final String DROP_RECORD_TABLE = "DROP TABLE IF EXISTS " + TABLE_RECORDS;
+        db.execSQL(DROP_RECORD_TABLE);
         
         onCreate(db);
     }

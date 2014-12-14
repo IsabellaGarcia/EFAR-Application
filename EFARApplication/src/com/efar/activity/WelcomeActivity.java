@@ -27,7 +27,7 @@ public class WelcomeActivity extends Activity {
         setContentView(R.layout.activity_welcome);
         
         // Initialize database from assets/main.sqlite
-        if ((new File(DATABASE_PATH + DATABASE_NAME)).exists() == false) {
+        if ((new File(getDatabaseFullPath())).exists() == false) {
 			// if sqlite file does not exist, check for folder.
 			File f = new File(DATABASE_PATH);
 			// if folder does not exist, new folder.
@@ -38,7 +38,7 @@ public class WelcomeActivity extends Activity {
 			try {
 				// get database from /assets/<db name>
 				InputStream is = getBaseContext().getAssets().open(DATABASE_NAME);
-				OutputStream os = new FileOutputStream(DATABASE_PATH + DATABASE_NAME);
+				OutputStream os = new FileOutputStream(getDatabaseFullPath());
 
 				// flush into the database we want it to be.
 				byte[] buffer = new byte[1024];

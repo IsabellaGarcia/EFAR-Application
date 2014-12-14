@@ -6,20 +6,18 @@ package com.efar.activity;
 import java.util.Vector;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.efar.adapter.EfarAdapter;
-import com.efar.application.EfarApplication;
+import com.efar.adapter.SimpleEfarAdapter;
 import com.efar.database.EmbededDatabase;
 import com.efar.datamodel.EfarModel;
-import com.efar.datamodel.EventModel;
 import com.example.efar.R;
 
 /**
@@ -42,14 +40,15 @@ public class EfarListActivity extends ListActivity {
         // Get the title on the top of screen.
         selected_efar_info = (TextView) findViewById(R.id.mTitle); 
         
-        // Get global variables from Application.
+        /* Get global variables from Application.
         EfarApplication global_variables = (EfarApplication) this.getApplication();
         EventModel event_now = global_variables.getEventNow();
-        String address_tag = event_now.getAddress_tag();
+        String address_tag = event_now.getAddress_tag();*/
         
 		// Database processing.
         EmbededDatabase dbhelper = new EmbededDatabase();
-		efars = dbhelper.getEfarByAddress(address_tag);
+		// efars = dbhelper.getEfarByAddress(address_tag);
+        efars = dbhelper.getAllEfar();
 		Toast.makeText(getApplicationContext(), Integer.toString(efars.size()),
 			     Toast.LENGTH_SHORT).show();
         
@@ -61,17 +60,8 @@ public class EfarListActivity extends ListActivity {
         Button buttonConfirm = (Button) findViewById(R.id.buttonSelectEfar);         
         buttonConfirm.setOnClickListener(new OnClickListener() {  
             public void onClick(View v) {  
-            	
-            	/**
-            	 * Please add 
-            	 * 		- Call efars.
-            	 * 		- Text efars.
-            	 * functions here.
-            	 */
-            	
-                /*Intent intent = new Intent(EfarListActivity.this, SelectFriendActivity.class);   
-                //intent.putExtra("chosedUser", chosedUser);
-                //setResult(1, intent);*/  
+                Intent intent = new Intent(EfarListActivity.this, AddEfarActivity.class);  
+                startActivity(intent);
             	EfarListActivity.this.finish();
             }  
         });  
@@ -85,7 +75,7 @@ public class EfarListActivity extends ListActivity {
             }  
         });  
 
-        setListAdapter(new EfarAdapter(this, efars)); 
+        setListAdapter(new SimpleEfarAdapter(this, efars)); 
     }  
     
 	/**
@@ -95,13 +85,5 @@ public class EfarListActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) { 
     	selected_efar = efars.get(position);
     	selected_efar_info.setText(selected_efar.getName() + " @" + selected_efar.getAddressTag());
-    	CheckBox select_this_efar = (CheckBox) v.findViewById(R.id.select_this_efar);
-    	if (select_this_efar.isChecked()) {
-    		select_this_efar.setChecked(false);
-        } else {
-        	select_this_efar.setChecked(true);
-        }
     }
-	
-
 }

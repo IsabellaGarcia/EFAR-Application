@@ -15,6 +15,28 @@ public class EfarModel {
 	private String timeAvailable;
 	private String skillAvailable;
 
+	public EfarModel() {
+	}
+	
+	public EfarModel(String name, String phone, String addressTag, String timeAvailable, String skillAvailable) {
+		this.name = name;
+		this.phone = phone;
+		this.addressTag = addressTag;
+		this.timeAvailable = timeAvailable;
+		this.skillAvailable = skillAvailable;
+	}
+	
+	public EfarModel(int id, String name, String phone, String addressTag, String timeAvailable, String skillAvailable) {
+		this.id = id;
+		this.name = name;
+		this.phone = phone;
+		this.addressTag = addressTag;
+		this.timeAvailable = timeAvailable;
+		this.skillAvailable = skillAvailable;
+	}
+	
+	
+	
 	/**
 	 * @return the id
 	 */

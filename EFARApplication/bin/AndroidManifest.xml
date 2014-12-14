@@ -64,6 +64,15 @@
         <activity
             android:name="com.efar.activity.EfarListActivity">
         </activity>
+        <activity
+            android:name="com.efar.activity.RecordListActivity">
+        </activity>
+        <activity
+            android:name="com.efar.activity.AddEfarActivity">
+        </activity>
+        <activity
+            android:name="com.efar.activity.AvailableEfarListActivity">
+        </activity>
        
         <!-- ContentProvider List -->
         <provider

@@ -1,58 +1,72 @@
-/** 
-* File name: ContactAdapter.java
-* Created by Xinyi HUANG
-* Created Date: 26/11/2014
-* Description: Adapter for RecordActivity.java
-*/
-
+/**
+ * 
+ */
 package com.efar.adapter;
 
 import java.util.List;
 
+import com.efar.datamodel.RecordModel;
+import com.example.efar.R;
+
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.efar.datamodel.RecordModel;
-import com.example.efar.R;
 
-public class RecordAdapter extends BaseAdapter{
-	private List<RecordModel> mData;
-	private Context mContext;
+/**
+ * @author Michyo
+ * Adapter for Record selection.
+ */
+public class RecordAdapter extends BaseAdapter {
+	private LayoutInflater mInflater;
+	// private Bitmap mPic; 
+	private List<RecordModel> records;  
 	
-	public RecordAdapter(Context context, List data){
-		this.mData = data;
-		this.mContext = context;
-	}
-	@Override
-	public int getCount() {
-		return mData.size();
-	}
-
-	@Override
-	public Object getItem(int position) {
-		return mData.get(position);
-	}
-
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
-
-	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		View view = View.inflate(mContext, R.layout.record_list_item, null);
-		RecordModel record = mData.get(position);
+	public RecordAdapter(Context context, List<RecordModel> Records){  
+		mInflater = LayoutInflater.from(context);  
+		records = Records;  
+	}  
+    
+	public int getCount(){  
+		return records.size();  
+	}  
+	public Object getItem(int position){  
+		return records.get(position);  
+	}      
+	public long getItemId(int position){  
+		return position;  
+	}      
+	
+	@SuppressLint("InflateParams")
+	public View getView(int position,View convertView,ViewGroup parent){  
+		ViewHolder holder;      
+		if(convertView == null){  
+			convertView = mInflater.inflate(R.layout.record_list_item, null);  
+			holder = new ViewHolder();  
+			holder.name = (TextView) convertView.findViewById(R.id.record_list_name);  
+			holder.efars = (TextView) convertView.findViewById(R.id.record_list_efars);
+			holder.detail = (TextView) convertView.findViewById(R.id.record_list_detail); 
+			convertView.setTag(holder);  
+		}  
+		else{  
+			holder = (ViewHolder) convertView.getTag();  
+		}  
 		
-		//Initialize view
-		TextView record_name = (TextView)view.findViewById(R.id.record_name);	
-		//Dynamically bind data to view
-		record_name.setText(record.getRecord_name());
-		//return the final view
-		return view;
-	}
-	
+		RecordModel this_record = records.get(position);
+		holder.name.setText(this_record.getEventName().toString().trim());
+		holder.efars.setText(this_record.getRelatedEfars().toString().trim());
+		holder.detail.setText(this_record.getEventDetail().toString().trim());
 
-}
+		return convertView;  
+	}  
+	
+	private class ViewHolder{  
+		TextView name;  
+		TextView efars;
+		TextView detail;
+	}
+}  

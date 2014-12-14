@@ -1,17 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#000000" >
-    
-     <TextView
-        android:id = "@+id/record_name"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:textColor="#FFFFFF" 
-        android:layout_width = "wrap_content"
-        android:layout_height="90px"
-        android:layout_centerVertical = "true"
-      />
-
-</LinearLayout>
+<?xml version="1.0" encoding="utf-8"?>  
+<LinearLayout  
+  	xmlns:android="http://schemas.android.com/apk/res/android"  
+  	android:orientation="horizontal"  
+  	android:layout_width="fill_parent"  
+  	android:layout_height="fill_parent"  
+  	android:background="@android:color/transparent" >  
+	<LinearLayout    
+        android:orientation="vertical"    
+        android:layout_width="fill_parent"    
+        android:layout_height="fill_parent"    
+        android:background="@android:color/transparent"    
+        android:padding="6dp" >    
+  			 
+  			<TextView android:id="@+id/record_list_name"  
+    			android:layout_width="wrap_content"  
+     			android:layout_height="wrap_content"
+     			android:textColor="@color/pure_black"
+     			android:textSize="20sp">  
+  			</TextView> 
+  			
+  			<TextView android:id="@+id/record_list_efars"  
+  			    android:layout_marginLeft="10dp"
+    			android:layout_width="wrap_content"  
+     			android:layout_height="wrap_content"
+     			android:textColor="@color/half_gray"
+     			android:textSize="15sp">
+  			</TextView>
+  			
+  			<TextView android:id="@+id/record_list_detail"  
+  			    android:layout_marginLeft="10dp"
+    			android:layout_width="wrap_content"  
+     			android:layout_height="20dp"
+     			android:textColor="@color/halfGray"
+     			android:textSize="15sp" >
+  			</TextView>
+  			
+  	</LinearLayout>
+  	  
+</LinearLayout> 

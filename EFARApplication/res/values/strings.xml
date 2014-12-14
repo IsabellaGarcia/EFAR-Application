@@ -22,6 +22,7 @@
     <string name="all_contacts">Go to All Contacts</string>
     <string name="search_contacts">Search Contacts</string>
     <string name="done_indetail">Done and Save</string>
+    <string name="button_add">Add</string>
     
     
     <color name="translucence_littledark_orange">#55FFcF9F</color>

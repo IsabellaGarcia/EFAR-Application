@@ -15,6 +15,7 @@ import java.util.Vector;
 
 import com.efar.database.DatabaseOpener;
 import com.efar.datamodel.EfarModel;
+import com.efar.datamodel.RecordModel;
 
 import android.content.Context;
 import android.content.ContentValues;
@@ -66,6 +67,21 @@ public class DatabaseHelper {
     	db.close();
     	return result;
 	}
+	
+	public Vector<RecordModel> getAllRecords() {
+		Vector<RecordModel> result = new Vector<RecordModel>();
+    	SQLiteDatabase db = db_opener.getReadableDatabase();
+    	Cursor cursor = db.rawQuery("select * from "+ TABLE_RECORDS, null);
+    	while(cursor.moveToNext()){
+    		RecordModel record = new RecordModel();
+    		record.setId(cursor.getInt(0));
+    		record.setEventName(cursor.getString(1));
+    		record.setEventDetail(cursor.getString(2));
+    		result.add(record);
+    	}    	
+    	db.close();
+    	return result;
+	}
 
 	/*
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -101,7 +117,7 @@ public class DatabaseHelper {
 		db.close();
         return result;  
     }
-
+	
 	public void delete(String table_name, int id) {
         SQLiteDatabase db = db_opener.getWritableDatabase();
         db.delete(table_name, _ID + "=" + id, null);

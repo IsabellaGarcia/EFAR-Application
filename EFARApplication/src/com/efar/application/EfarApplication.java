@@ -20,6 +20,7 @@ public class EfarApplication extends Application {
 	// Global variables.
 	private Vector<EventModel> events;
 	private EventModel eventNow;
+	private RecordModel selectedRecord;
 
 	/**
 	 * @return the event_under_processing
@@ -64,6 +65,20 @@ public class EfarApplication extends Application {
 	 */
 	public void setEventNow(EventModel eventNow) {
 		this.eventNow = eventNow;
+	}
+
+	/**
+	 * @return the selectedRecord
+	 */
+	public RecordModel getSelectedRecord() {
+		return selectedRecord;
+	}
+
+	/**
+	 * @param selectedRecord the selectedRecord to set
+	 */
+	public void setSelectedRecord(RecordModel selectedRecord) {
+		this.selectedRecord = selectedRecord;
 	}
 
 }

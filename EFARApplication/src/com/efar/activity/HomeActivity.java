@@ -12,12 +12,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.efar.application.EfarApplication;
-import com.efar.database.DatabaseHelper;
 import com.efar.database.EmbededDatabase;
 import com.efar.datamodel.EfarModel;
 import com.efar.datamodel.EventModel;
@@ -25,7 +23,6 @@ import com.example.efar.R;
 
 public class HomeActivity extends Activity{
 	
-	private FrameLayout container;
 	private ImageButton imagebutton_contact;
 	private ImageButton imagebutton_event;
 	private ImageButton imagebutton_record;
@@ -50,7 +47,6 @@ public class HomeActivity extends Activity{
 		// Test end.
 		
 		//Click event to open contact list
-		container = (FrameLayout) findViewById(R.id.framelayout_main);
 		imagebutton_contact = (ImageButton) findViewById(R.id.button_contact);
 		imagebutton_contact.setOnClickListener(new OnClickListener(){
 			@Override
@@ -78,7 +74,7 @@ public class HomeActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent();
-				intent.setClass(HomeActivity.this, RecordActivity.class);
+				intent.setClass(HomeActivity.this, RecordListActivity.class);
 				startActivity(intent);
 			}
 		});

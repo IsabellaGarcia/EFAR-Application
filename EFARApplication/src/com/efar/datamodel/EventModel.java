@@ -6,6 +6,8 @@
 
 package com.efar.datamodel;
 
+import java.util.Vector;
+
 public class EventModel {
 	//Emergency name
 	private int id;
@@ -13,6 +15,7 @@ public class EventModel {
 	private String time;
 	private String address_tag;
 	private String description;
+	private Vector<String> relatedEfarsVector;
 	
 	//private String event_name;
 	private int[] efars;
@@ -77,4 +80,61 @@ public class EventModel {
 	public void setTime(String time) {
 		this.time = time;
 	}
+	
+
+	/**
+	 * @return the relatedEfars
+	 */
+	public String getRelatedEfars() {
+		return getRelatedEfars(relatedEfarsVector);
+	}
+
+	/**
+	 * @param relatedEfars the relatedEfars to set
+	 */
+	public void setRelatedEfars(String relatedEfars) {
+		setRelatedEfarsVector(relatedEfars);
+	}
+	
+	
+	public String getRelatedEfars(Vector<String> v) {
+		String result = "";
+		for(int i = 0; i < v.size()-1; i++) {
+			result += v.get(i) + ",";
+		}
+		result += v.get(v.size()-1);
+		return result;
+	}
+
+	/**
+	 * @return the relatedEfarsVector
+	 */
+	public Vector<String> getRelatedEfarsVector() {
+		return relatedEfarsVector;
+	}
+
+	/**
+	 * @param relatedEfarsVector the relatedEfarsVector to set
+	 */
+	public void setRelatedEfarsVector(Vector<String> relatedEfarsVector) {
+		this.relatedEfarsVector = relatedEfarsVector;
+	}
+	
+	public void setRelatedEfarsVector(String efars) {
+		String[] separate_efars = efars.split(",");
+		Vector<String> results = new Vector<String>();
+		for(int i = 0; i < separate_efars.length; i++) {
+			results.add(separate_efars[i]);
+		}
+		this.relatedEfarsVector = results;
+	}
+	
+	public void addEfar(EfarModel efar) {
+		this.relatedEfarsVector.add(efar.getName());
+	}
+	
+	public void deleteEfar(EfarModel efar) {
+		this.relatedEfarsVector.remove(efar.getName());
+	}
+ 
 }
