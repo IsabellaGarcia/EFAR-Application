@@ -4,6 +4,17 @@
     android:layout_height="match_parent"
     
     android:background="@drawable/welcome" >
-    
+
+	<TextView
+	    android:id="@+id/Welcome_info"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentTop="true"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="107dp"
+	    android:text="Welcome to E.F.A.R"
+	    android:textSize="25sp"
+	    android:textStyle="bold"
+	    android:textColor="#000033" />
 
 </RelativeLayout>

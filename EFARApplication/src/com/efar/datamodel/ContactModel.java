@@ -1,4 +1,6 @@
-
+/**
+ * @author HUANG Xinyi
+ */
 package com.efar.datamodel;
 
 public class ContactModel {

@@ -1,5 +1,5 @@
 /**
- * Created by Xinyi HUANG
+ * @author Xinyi HUANG
  * Created Date: 27/11/2014
  * Description: Get useful SMS for Emergency
  * 				SMS should start by '@'

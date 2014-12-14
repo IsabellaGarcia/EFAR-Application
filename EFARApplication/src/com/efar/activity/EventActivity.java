@@ -1,3 +1,9 @@
+/**
+ * @author Xinyi HUANG
+ * Created Date: 26/11/2014
+ * Description: Activity for finding unread SMS in phone
+ */
+
 package com.efar.activity;
 
 import java.text.SimpleDateFormat;
@@ -9,7 +15,6 @@ import android.os.Handler;
 import android.net.Uri;
 
 import com.efar.adapter.EventAdapter;
-import com.efar.contentobserver.SMSContentObserver;
 import com.efar.datamodel.EventModel;
 import com.example.efar.R;
 

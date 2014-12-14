@@ -1,5 +1,5 @@
 /** 
-* Created by Xinyi HUANG
+* @author Xinyi HUANG
 * Created Date: 25/11/2014
 * Description: Data model for EventActivity.java & EventAdapter
 */
@@ -15,7 +15,11 @@ public class EventModel {
 	private String time;
 	private String address_tag;
 	private String description;
+<<<<<<< HEAD
 	private Vector<String> relatedEfarsVector;
+=======
+	private String send_list;  //send out SMS contacts list
+>>>>>>> FETCH_HEAD
 	
 	//private String event_name;
 	private int[] efars;

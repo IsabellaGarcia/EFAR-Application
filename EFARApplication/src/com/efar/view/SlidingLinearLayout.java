@@ -1,3 +1,6 @@
+/**
+ * @author HUANG Xinyi
+ */
 package com.efar.view;
 
 import android.content.Context;

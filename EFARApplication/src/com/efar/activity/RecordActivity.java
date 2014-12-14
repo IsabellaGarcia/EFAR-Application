@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 /**
  * 
  */
+=======
+/** 
+* @author Xinyi HUANG
+* Created Date: 26/11/2014
+* Description: Activity for Record list
+* 			   
+*/
+>>>>>>> FETCH_HEAD
 package com.efar.activity;
 
 import com.efar.application.EfarApplication;

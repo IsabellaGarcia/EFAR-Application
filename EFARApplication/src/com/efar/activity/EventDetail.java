@@ -1,5 +1,5 @@
 /** 
-* Created by Xinyi HUANG
+* @author Xinyi HUANG
 * Created Date: 06/12/2014
 * Description: Activity for One Event
 */
@@ -79,7 +79,6 @@ protected void onStart(){
 }
 
 private void Layout(){
-	 
 	//Click to open a record list
 	all_contacts = (Button) findViewById(R.id.all_contacts);
 	all_contacts.setOnClickListener(new OnClickListener(){

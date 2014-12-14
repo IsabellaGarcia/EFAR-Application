@@ -1,6 +1,6 @@
 /** 
 * File name: ContactAdapter.java
-* Created by Xinyi HUANG
+* @author Xinyi HUANG
 * Created Date: 26/11/2014
 * Description: Adapter for EventActivity.java
 */

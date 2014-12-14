@@ -1,6 +1,16 @@
+<<<<<<< HEAD
 /**
  * 
  */
+=======
+/** 
+* File name: ContactAdapter.java
+* @author Xinyi HUANG
+* Created Date: 26/11/2014
+* Description: Adapter for RecordActivity.java
+*/
+
+>>>>>>> FETCH_HEAD
 package com.efar.adapter;
 
 import java.util.List;

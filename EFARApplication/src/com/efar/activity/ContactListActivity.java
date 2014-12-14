@@ -1,5 +1,5 @@
 /**
- *  Created by Xinyi HUANG
+ *  @author Xinyi HUANG
  * Created Date: 26/11/2014
  * Description: Activity for Finding contacts from contact-book of phone
  */
