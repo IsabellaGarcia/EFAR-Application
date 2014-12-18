@@ -3,97 +3,42 @@ package com.efar.datamodel;
 
 import java.util.Vector;
 
-/**
- * @author Michyo
- * Model of Record.
+/**CSIT 6000B
+ * @author Xinyi HUANG
+ * Student Name: HUANG Xinyi   Student ID:20222719   
+ * Email: xhuangap@connect.ust.hk
+ * Description: Model of Record.
  */
 public class RecordModel {
 	private int id;
 	private String eventName;
 	private String eventDetail;
-	private Vector<String> relatedEfarsVector;
-
-	public String getEventName() {
-		return eventName;
-	}
-
-	public void setEventName(String record_name) {
-		this.eventName = record_name;
-	}
-
-	/**
-	 * @return the eventDetail
-	 */
-	public String getEventDetail() {
-		return eventDetail;
-	}
-
-	/**
-	 * @param eventDetail the eventDetail to set
-	 */
-	public void setEventDetail(String eventDetail) {
-		this.eventDetail = eventDetail;
-	}
-
-	/**
-	 * @return the id
-	 */
+	private String send_list;
 	public int getId() {
 		return id;
 	}
-
-	/**
-	 * @param id the id to set
-	 */
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	/**
-	 * @return the relatedEfars
-	 */
-	public String getRelatedEfars() {
-		return getRelatedEfars(relatedEfarsVector);
+	public String getEventName() {
+		return eventName;
 	}
-
-	/**
-	 * @param relatedEfars the relatedEfars to set
-	 */
-	public void setRelatedEfars(String relatedEfars) {
-		setRelatedEfarsVector(relatedEfars);
+	public void setEventName(String eventName) {
+		this.eventName = eventName;
 	}
-	
-	
-	public String getRelatedEfars(Vector<String> v) {
-		String result = "";
-		for(int i = 0; i < v.size()-1; i++) {
-			result += v.get(i) + ",";
-		}
-		result += v.get(v.size()-1);
-		return result;
+	public String getEventDetail() {
+		return eventDetail;
 	}
-
-	/**
-	 * @return the relatedEfarsVector
-	 */
-	public Vector<String> getRelatedEfarsVector() {
-		return relatedEfarsVector;
+	public void setEventDetail(String eventDetail) {
+		this.eventDetail = eventDetail;
 	}
-
-	/**
-	 * @param relatedEfarsVector the relatedEfarsVector to set
-	 */
-	public void setRelatedEfarsVector(Vector<String> relatedEfarsVector) {
-		this.relatedEfarsVector = relatedEfarsVector;
+	public String getSend_list() {
+		return send_list;
+	}
+	public void setSend_list(String send_list) {
+		this.send_list = send_list;
 	}
 	
-	public void setRelatedEfarsVector(String efars) {
-		String[] separate_efars = efars.split(",");
-		Vector<String> results = new Vector<String>();
-		for(int i = 0; i < separate_efars.length; i++) {
-			results.add(separate_efars[i]);
-		}
-		this.relatedEfarsVector = results;
-	}
+
  
 }

@@ -7,6 +7,8 @@
     android:layout_alignParentBottom="true"
     
     android:background="@color/translucence_lightlivid" >
+   
+    
     <ImageButton
         android:id="@+id/button_event"
         style="@style/Button_Menu"

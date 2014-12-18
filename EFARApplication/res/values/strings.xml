@@ -22,9 +22,10 @@
     <string name="all_contacts">Go to All Contacts</string>
     <string name="search_contacts">Search Contacts</string>
     <string name="done_indetail">Done and Save</string>
-    <string name="button_add">Add</string>
-    
-    
+    <string name="button_add">Select</string>
+    <string name="mTitle">  Available Volunteers  </string>
+    <string name="hello_efar">Welcome To E.F.A.R App</string>
+    <string name="list_text">       EVENTS          RECORDS          CONTACTS        ADD</string>
     <color name="translucence_littledark_orange">#55FFcF9F</color>
     <color name="translucence_dark_orange">#55FF8409</color>
     <color name="translucence_white">#55FFFFFF</color>

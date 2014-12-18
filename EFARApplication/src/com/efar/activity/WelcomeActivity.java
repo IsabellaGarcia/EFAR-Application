@@ -1,6 +1,7 @@
-/** 
+/** CSIT 6000B
 * @author Xinyi HUANG
-* Created Date: 25/11/2014
+* Student Name: HUANG Xinyi   Student ID:20222719   
+* Email: xhuangap@connect.ust.hk
 * Description: Activity for Welcoming
 */ 
 
@@ -58,7 +59,7 @@ public class WelcomeActivity extends Activity {
 
 		//SQLiteDatabase database = SQLiteDatabase.openOrCreateDatabase(DATABASE_PATH + DATABASE_NAME, null);
         
-        // Delay 2 seconds to run() and jump to another page.
+        // Delay 1 seconds to run() and jump to another page.
         new Handler().postDelayed(new Runnable() {
         	
         	public void run() {
@@ -71,10 +72,4 @@ public class WelcomeActivity extends Activity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
 }

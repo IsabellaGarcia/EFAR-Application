@@ -1,7 +1,12 @@
 
 package com.efar.activity;
 
-import com.efar.application.EfarApplication;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.efar.adapter.EventAdapter;
+import com.efar.adapter.RecordAdapter;
+import com.efar.database.EmbededDatabase;
 import com.efar.datamodel.RecordModel;
 import com.example.efar.R;
 
@@ -11,10 +16,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 
-/**
- * @author Michyo
+/**CSIT 6000B
+ *@author Xinyi HUANG
+ * Student Name: HUANG Xinyi   Student ID:20222719   
+ * Email: xhuangap@connect.ust.hk
  *
  */
 public class RecordActivity extends Activity {
@@ -22,26 +30,21 @@ public class RecordActivity extends Activity {
 	private ImageButton imagebutton_event;
 	private ImageButton imagebutton_record;
 	private ImageButton test;
+	private List<RecordModel> records = new ArrayList<RecordModel>(); 
+	private ListView lv_list;
+	private RecordAdapter mAdapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_record); 
-		
-		
-		TextView title = (TextView) findViewById(R.id.record_title);
-		TextView efars = (TextView) findViewById(R.id.record_efars);
-		TextView detail = (TextView) findViewById(R.id.record_detail);
+		setContentView(R.layout.event_list_view); 
+		layout();
+		getRecord();
+	}
 
-		// Get global variables from Application.
-	    EfarApplication global_variables = (EfarApplication) this.getApplication();
-	    RecordModel selected_record = global_variables.getSelectedRecord();
-	    title.setText(selected_record.getEventName());
-	    efars.setText(selected_record.getRelatedEfars());
-	    detail.setText(selected_record.getEventDetail());
-		
-        // Menu operation.
+	private void layout(){
+		 // Menu operation.
 		//Click event to open contact list
 		imagebutton_contact = (ImageButton) findViewById(R.id.button_contact);
 		imagebutton_contact.setOnClickListener(new OnClickListener(){
@@ -85,6 +88,16 @@ public class RecordActivity extends Activity {
 				startActivity(intent);
 			}
 		});
+		
 	}
+
+	public void getRecord(){
+		EmbededDatabase dbhelper = new EmbededDatabase();
+		records = dbhelper.getAllRecords();
+		lv_list = (ListView)findViewById(R.id.event_list);
+		mAdapter = new RecordAdapter(this, records);
+		lv_list.setAdapter(mAdapter);
+	}
+
 
 }

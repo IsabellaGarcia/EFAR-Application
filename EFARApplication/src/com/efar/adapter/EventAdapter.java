@@ -1,7 +1,7 @@
-/** 
-* File name: ContactAdapter.java
+/** CSIT 6000B
 * @author Xinyi HUANG
-* Created Date: 26/11/2014
+* Student Name: HUANG Xinyi   Student ID:20222719   
+* Email: xhuangap@connect.ust.hk
 * Description: Adapter for EventActivity.java
 */
 
@@ -16,14 +16,14 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.efar.database.DatabaseConstants;
-import com.efar.database.DatabaseHelper;
+//import com.efar.database.DatabaseHelper;
 import com.efar.datamodel.EventModel;
 import com.example.efar.R;
 
 public class EventAdapter extends BaseAdapter{
 	private List<EventModel> mData;
 	private Context mContext;
-	private DatabaseHelper mDbHelper;
+	//private DatabaseHelper mDbHelper;
 	
 	public EventAdapter(Context context, List data){
 		this.mData = data;

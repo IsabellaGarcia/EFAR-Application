@@ -31,23 +31,7 @@
      			android:textColor="@color/half_gray"
      			android:textSize="15sp" >
   			</TextView>
-  			
-  			<TextView android:id="@+id/efar_list_skill_tag"  
-  			    android:layout_below="@+id/efar_list_name"
-  			    android:layout_marginTop="2dp"
-    			android:layout_width="wrap_content"  
-     			android:layout_height="wrap_content"
-     			android:textColor="@color/half_gray"
-     			android:textSize="15sp" >
-  			</TextView>
-
-  			<CheckBox
-  			    android:id="@+id/select_this_efar"
-  			    android:layout_alignParentRight="true"
-  			    android:layout_centerHorizontal="true"
-        		android:layout_alignParentTop="true"
-  			    android:layout_width="wrap_content"
-  			    android:layout_height="wrap_content" />
+  	
   			
   	</RelativeLayout>
   	  

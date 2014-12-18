@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.efar.datamodel.EfarModel;
 import com.example.efar.R;
 
-/**
+/**CSIT 6000B
  * @author Michyo
  *
  */

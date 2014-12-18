@@ -1,5 +1,7 @@
 /**
- * @author HUANG Xinyi
+ * @author Xinyi HUANG
+ * Student Name: HUANG Xinyi   Student ID:20222719   
+ * Email: xhuangap@connect.ust.hk
  */
 package com.efar.datamodel;
 

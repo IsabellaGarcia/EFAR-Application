@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/welcome" >
+
+    <EditText
+        android:id="@+id/name_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/name_hint"
+        android:hint="New Volunteer Name"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/name_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/name_input"
+        android:layout_alignBottom="@+id/name_input"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="14dp"
+        android:text="NAME: "
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+    <include
+        android:id="@+id/include1"
+        layout="@layout/menu_main" />
+
+    <TextView
+        android:id="@+id/phone_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/name_hint"
+        android:layout_below="@+id/name_input"
+        android:layout_marginTop="15dp"
+        android:text="Phone: "
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/phone_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType = "number"
+        android:layout_alignBaseline="@+id/phone_hint"
+        android:layout_alignBottom="@+id/phone_hint"
+        android:layout_toRightOf="@+id/name_hint"
+        android:ems="10"
+        android:hint="Contact Number"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/address_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/phone_hint"
+        android:layout_below="@+id/phone_input"
+        android:layout_marginTop="23dp"
+        android:text="Address tag: "
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/address_input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/address_hint"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Address tag here"
+        android:textSize="20sp" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/time_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/address_hint"
+        android:layout_below="@+id/address_input"
+        android:layout_marginTop="14dp"
+        android:text="Available Weekday: "
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/spinnerText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </TextView>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignRight="@+id/name_input"
+        android:layout_alignTop="@+id/time_hint" />
+
+    	<Button
+    	    android:id="@+id/add_volunteer"
+    	    style="@style/Button"
+    	    android:layout_width="160dp"
+    	    android:layout_height="wrap_content"
+    	    android:layout_alignBaseline="@+id/cancel_volunteer"
+    	    android:layout_alignBottom="@+id/cancel_volunteer"
+    	    android:layout_alignParentLeft="true"
+    	    android:text="Confirm" />
+
+    	<Button
+    	    android:id="@+id/cancel_volunteer"
+    	    style="@style/Button"
+    	    android:layout_width="160dp"
+    	    android:layout_height="wrap_content"
+    	    android:layout_above="@+id/include1"
+    	    android:layout_alignParentRight="true"
+    	    android:text="Cancel" />
+
+</RelativeLayout>

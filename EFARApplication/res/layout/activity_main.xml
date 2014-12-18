@@ -6,14 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     
-   <LinearLayout
-        style="@style/Linearlayout_Horizontal"
-        android:layout_width="match_parent" >
-        
-  
-    </LinearLayout>
-    
-             
+
     <!-- Dynamically load view. -->
     <!-- layout_width = match_parent doesn't perform well. -->
     <FrameLayout
@@ -22,7 +15,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1" >
     </FrameLayout>
-    
+   
     <include
         layout="@layout/menu_main" />
 

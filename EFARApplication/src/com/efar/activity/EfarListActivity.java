@@ -1,8 +1,8 @@
-/**
- * 
- */
+
 package com.efar.activity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 import android.app.ListActivity;
@@ -20,13 +20,15 @@ import com.efar.database.EmbededDatabase;
 import com.efar.datamodel.EfarModel;
 import com.example.efar.R;
 
-/**
+/**CSIT 6000B
  * @author Michyo
+ *
  * Show a list of available Efars to be selected.
+ * 
  */
 
 public class EfarListActivity extends ListActivity {
-	private Vector<EfarModel> efars = null;  
+	private List<EfarModel> efars = new ArrayList<EfarModel>(); 
 	private TextView selected_efar_info;  
     private EfarModel selected_efar = new EfarModel();
     
@@ -40,10 +42,6 @@ public class EfarListActivity extends ListActivity {
         // Get the title on the top of screen.
         selected_efar_info = (TextView) findViewById(R.id.mTitle); 
         
-        /* Get global variables from Application.
-        EfarApplication global_variables = (EfarApplication) this.getApplication();
-        EventModel event_now = global_variables.getEventNow();
-        String address_tag = event_now.getAddress_tag();*/
         
 		// Database processing.
         EmbededDatabase dbhelper = new EmbededDatabase();

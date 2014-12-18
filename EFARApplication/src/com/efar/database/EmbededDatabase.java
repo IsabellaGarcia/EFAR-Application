@@ -1,10 +1,12 @@
 /**
- * 
+ * CSIT 6000B
  */
 package com.efar.database;
 
 import static com.efar.database.DatabaseConstants.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 import com.efar.datamodel.EfarModel;
@@ -14,24 +16,17 @@ import com.efar.datamodel.RecordModel;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+import android.widget.Toast;
 
 /**
  * @author Michyo
  * Enable embedded database released with application.
+ * Changed by Xinyi HUANG
  */
 public class EmbededDatabase {
 	
 	private SQLiteDatabase embededDatabase = SQLiteDatabase.openOrCreateDatabase(getDatabaseFullPath(), null);
-	
-	public void addEfar(String name, String phone, String address, String time, String skill) {
-        ContentValues values = new ContentValues();
-        values.put(NAME, name);
-        values.put(PHONE, phone);
-        values.put(ADDRESS_TAG, address);
-        values.put(TIME_AVAILABLE, time);
-        values.put(SKILL_AVAILABLE, skill);
-        embededDatabase.insert(TABLE_BLOCK_EFARS, null, values);
-    }
 	
 	public void addEfar(EfarModel efar) {
         ContentValues values = new ContentValues();
@@ -39,32 +34,36 @@ public class EmbededDatabase {
         values.put(PHONE, efar.getPhone());
         values.put(ADDRESS_TAG, efar.getAddressTag());
         values.put(TIME_AVAILABLE, efar.getTimeAvailable());
-        values.put(SKILL_AVAILABLE, efar.getSkillAvailable());
+        //values.put(SKILL_AVAILABLE, efar.getSkillAvailable());
         embededDatabase.insert(TABLE_BLOCK_EFARS, null, values);
     }
 	
-	public Vector<EfarModel> getAllEfar() {
-		Vector<EfarModel> result = new Vector<EfarModel>();
+	public List<EfarModel> getAllEfar() {
+		List<EfarModel> result = new ArrayList<EfarModel>();
     	Cursor cursor = embededDatabase.rawQuery("select * from "+ TABLE_BLOCK_EFARS, null);
     	while(cursor.moveToNext()){
     		EfarModel efar = new EfarModel();
-    		efar.setId(cursor.getInt(0));
+    		//efar.setId(cursor.getInt(0));
     		efar.setName(cursor.getString(1));
     		efar.setPhone(cursor.getString(2));
     		efar.setAddressTag(cursor.getString(3));
     		efar.setTimeAvailable(cursor.getString(4));
-    		efar.setSkillAvailable(cursor.getString(5));
+    		//efar.setSkillAvailable(cursor.getString(5));
     		result.add(efar);
     	}    	
     	embededDatabase.close();
     	return result;
 	}
 	
-	public Vector<EfarModel> getEfarByAddress(String address_tag) {
-		Vector<EfarModel> result = new Vector<EfarModel>();
-    	Cursor cursor = embededDatabase.rawQuery("select * from "+ TABLE_BLOCK_EFARS + 
-    			" where "+ ADDRESS_TAG +" = ? ",
-    			new String[]{address_tag.trim()});
+	// ---- Search by Address and time   
+	public List<EfarModel> getEfarByAddress(String address_tag, String time) {
+		List<EfarModel> result = new ArrayList<EfarModel>();
+		
+		Log.v(address_tag, address_tag); 
+    	Cursor cursor = embededDatabase.rawQuery("select * from "+ TABLE_BLOCK_EFARS
+    		+ " where "+ TIME_AVAILABLE +" = ? AND " + ADDRESS_TAG +" = ?" ,
+    			new String[]{time, address_tag});
+    			//null);
     	while(cursor.moveToNext()){
     		EfarModel efar = new EfarModel();
     		efar.setId(cursor.getInt(0));
@@ -72,9 +71,10 @@ public class EmbededDatabase {
     		efar.setPhone(cursor.getString(2));
     		efar.setAddressTag(cursor.getString(3));
     		efar.setTimeAvailable(cursor.getString(4));
-    		efar.setSkillAvailable(cursor.getString(5));
+    		//efar.setSkillAvailable(cursor.getString(5));
     		result.add(efar);
     	}    	
+    	cursor.close();
     	embededDatabase.close();
     	return result;
 	}
@@ -102,19 +102,20 @@ public class EmbededDatabase {
 		String event_name = event.getPhone() + "@" + event.getTime();
 		ContentValues values = new ContentValues();
 		values.put(EVENT_NAME, event_name);
-		values.put(RELATED_EFARS, event.getRelatedEfars());
-		values.put(EVENT_DETAIL, event.generateDetail());
+		values.put(RELATED_EFARS, event.getSend_list());
+		values.put(EVENT_DETAIL, event.getDescription());
 		embededDatabase.insert(TABLE_RECORDS, null, values);
 	}
 	
-	public Vector<RecordModel> getAllRecords() {
-		Vector<RecordModel> result = new Vector<RecordModel>();
+	public List<RecordModel> getAllRecords() {
+		List<RecordModel> result = new ArrayList<RecordModel>();
     	Cursor cursor = embededDatabase.rawQuery("select * from "+ TABLE_RECORDS, null);
     	while(cursor.moveToNext()){
     		RecordModel record = new RecordModel();
     		record.setId(cursor.getInt(0));
     		record.setEventName(cursor.getString(1));
-    		record.setRelatedEfars(cursor.getString(2));
+    		record.setSend_list(cursor.getString(2));
+    	//	Toast.makeText(context,record.getSend_list(), Toast.LENGTH_SHORT).show();
     		record.setEventDetail(cursor.getString(3));
     		result.add(record);
     	}    	

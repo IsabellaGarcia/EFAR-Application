@@ -69,7 +69,7 @@
 	
 	<TextView
         android:id="@+id/body"
-        android:layout_height="190dp"
+        android:layout_height="135dp"
         android:layout_width="fill_parent"
          android:layout_marginLeft="10dp"
         android:layout_below ="@+id/address_tag"
@@ -78,11 +78,12 @@
 	
 	<TextView
         android:id="@+id/volunteer"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:layout_width="fill_parent"
         android:layout_marginLeft="10dp"
         android:layout_below ="@+id/body"
         android:layout_marginTop="5dp"
+        android:textStyle="bold"
         android:textSize = "20sp"/>
 	
 	<Button
@@ -91,6 +92,7 @@
 	    android:layout_marginLeft="10dp"
 	    android:layout_height="70dp"
         android:layout_width="100dp"
+        style="@style/Button"
         android:text="@string/all_contacts"
 	 />
 	
@@ -100,6 +102,7 @@
 	    android:layout_height="70dp"
         android:layout_width="100dp"
         android:layout_below="@+id/volunteer"
+        style="@style/Button"
         android:text="@string/search_contacts"
 	 />
 	
@@ -109,6 +112,7 @@
 	    android:layout_height="70dp"
         android:layout_width="100dp"
         android:layout_below="@+id/volunteer"
+        style="@style/Button"
         android:text="@string/done_indetail"
 	 />
 

@@ -3,6 +3,8 @@
  * Created by Michyo SONG
  * Created Date: 28/11/2014
  * Description: Database helper extends from SQLiteOpenHelper.
+ * 
+ * Changed by Xinyi HUANG
  */
 
 package com.efar.database;
@@ -40,6 +42,7 @@ public class DatabaseOpener extends SQLiteOpenHelper {
         final String INIT_RECORD_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_RECORDS + " (" +
                 ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 EVENT_NAME + " CHAR, " +
+                RELATED_EFARS + " CHAR, " +
                 EVENT_DETAIL + " CHAR);"; 
         db.execSQL(INIT_RECORD_TABLE);
     }

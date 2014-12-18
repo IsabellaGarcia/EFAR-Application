@@ -1,14 +1,19 @@
 /** 
-* @author Xinyi HUANG
-* Created Date: 25/11/2014
+*@author Xinyi HUANG
+* Student Name: HUANG Xinyi   Student ID:20222719   
+* Email: xhuangap@connect.ust.hk
 * Description: Data model for EventActivity.java & EventAdapter
 */
 
 package com.efar.datamodel;
 
+import java.io.Serializable;
 import java.util.Vector;
 
-public class EventModel {
+import android.R.integer;
+import android.app.Application;
+
+public class EventModel implements Serializable {
 	//Emergency name
 	private int id;
 	private String phone;
@@ -17,6 +22,9 @@ public class EventModel {
 	private String description;
 	private Vector<String> relatedEfarsVector;
 	private String send_list;  //send out SMS contacts list
+    private String weekday;
+    private int index;
+    private int position;
 	
 	//private String event_name;
 	private int[] efars;
@@ -144,6 +152,38 @@ public class EventModel {
 				+ "At:" + address_tag + "\n"
 				+ "Description:" + description;
 		return result;
+	}
+
+	public String getWeekday() {
+		return weekday;
+	}
+
+	public void setWeekday(String info) {
+		this.weekday = info;
+	}
+
+	public String getSend_list() {
+		return send_list;
+	}
+
+	public void setSend_list(String send_list) {
+		this.send_list = send_list;
+	}
+
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
+	public int getPosition() {
+		return position;
+	}
+
+	public void setPosition(int position) {
+		this.position = position;
 	}
  
 }

@@ -1,7 +1,8 @@
 
-/**
+/**CSIT 6000B
  * @author Xinyi HUANG
- * Created Date: 26/11/2014
+ * Student Name: HUANG Xinyi   Student ID:20222719   
+ * Email: xhuangap@connect.ust.hk
  * Description: Adapter for contacts
  */
 

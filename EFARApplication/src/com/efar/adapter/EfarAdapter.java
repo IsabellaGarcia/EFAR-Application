@@ -6,6 +6,7 @@ package com.efar.adapter;
 import java.util.List;
 
 import com.efar.datamodel.EfarModel;
+import com.efar.datamodel.EventModel;
 import com.example.efar.R;
 
 import android.annotation.SuppressLint;
@@ -15,64 +16,50 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 
-/**
- * @author Michyo
- * Adapter for Efar selection.
+/**CSIT 6000B
+ * @author Xinyi HUANG
+ * Student Name: HUANG Xinyi   Student ID:20222719   
+ * Email: xhuangap@connect.ust.hk
  */
 public class EfarAdapter extends BaseAdapter {
-	private LayoutInflater mInflater;
-	// private Bitmap mPic; 
-	private List<EfarModel> efars;  
+	private List<EfarModel> mData;
+	private Context mContext;
 	
-	public EfarAdapter(Context context, List<EfarModel> EFARs){  
-		mInflater = LayoutInflater.from(context);  
-		efars = EFARs;  
-	}  
-    
-	public int getCount(){  
-		return efars.size();  
-	}  
-	public Object getItem(int position){  
-		return efars.get(position);  
-	}      
-	public long getItemId(int position){  
-		return position;  
-	}      
-	
-	@SuppressLint("InflateParams")
-	public View getView(int position,View convertView,ViewGroup parent){  
-		ViewHolder holder;      
-		if(convertView == null){  
-			convertView = mInflater.inflate(R.layout.efar_list_item, null);  
-			holder = new ViewHolder();  
-			holder.name = (TextView) convertView.findViewById(R.id.efar_list_name);  
-			holder.address = (TextView) convertView.findViewById(R.id.efar_list_address_tag); 
-			holder.skill = (TextView) convertView.findViewById(R.id.efar_list_skill_tag); 
-			holder.select = (CheckBox) convertView.findViewById(R.id.select_this_efar); 
-        
-			convertView.setTag(holder);  
-		}  
-		else{  
-			holder = (ViewHolder) convertView.getTag();  
-		}  
-		
-		EfarModel this_efar = efars.get(position);
-		holder.name.setText(this_efar.getName().toString().trim());
-		holder.address.setText(this_efar.getAddressTag().toString().trim());
-		holder.skill.setText(this_efar.getSkillAvailable().toString().trim());
-		holder.select.setChecked(false);
-
-		return convertView;  
-	}  
-	
-	private class ViewHolder{  
-		TextView name;  
-		TextView address;
-		TextView skill;
-		CheckBox select;
-		// ImageView icon;  
+	public EfarAdapter(Context context, List data) {
+		this.mData = data;
+		this.mContext = context;
+		// TODO Auto-generated constructor stub
 	}
+	@Override
+	public int getCount() {
+		return mData.size();
+		 
+	}
+
+	@Override
+	public Object getItem(int position) {
+		return mData.get(position);
+	}
+
+	@Override
+	public long getItemId(int position) {
+		return position;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		View view = View.inflate(mContext, R.layout.efar_list_item, null);
+		EfarModel volunteer = mData.get(position);
+		TextView volunteer_name = (TextView)view.findViewById(R.id.efar_list_name);
+		volunteer_name.setText(volunteer.getName());
+		TextView volunteer_address = (TextView)view.findViewById(R.id.efar_list_address_tag);
+		volunteer_address.setText(volunteer.getAddressTag());
+		
+		return view;
+	}
+	
 }  

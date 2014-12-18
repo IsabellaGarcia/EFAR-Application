@@ -1,5 +1,5 @@
 /**
- * Created by Michyo SONG
+ * @author Michyo SONG
  * Created Date: 03/12/2014
  * Description: Model of Efars.
  */
@@ -7,7 +7,7 @@
 package com.efar.datamodel;
 
 /**
- * @author HUANG Xinyi
+ * changed by HUANG Xinyi
  */
 
 public class EfarModel {

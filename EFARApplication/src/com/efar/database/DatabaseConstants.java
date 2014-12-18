@@ -45,7 +45,7 @@ public class DatabaseConstants {
 	 * These constants are related with Records table.
 	 */
 	public static final String TABLE_RECORDS = "records";
-	// public static final String EVENT_NAME = "event_name";
+   // public static final String EVENT_NAME = "event_name";
 	public static final String RELATED_EFARS = "related_efars";
 	public static final String EVENT_DETAIL = "event_detail";
 }

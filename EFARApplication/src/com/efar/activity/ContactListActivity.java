@@ -1,5 +1,7 @@
-/**
- *  @author Xinyi HUANG
+/**CSIT 6000B
+ * @author Xinyi HUANG
+ * Student Name: HUANG Xinyi   Student ID:20222719   
+ * Email: xhuangap@connect.ust.hk
  * Created Date: 26/11/2014
  * Description: Activity for Finding contacts from contact-book of phone
  */
@@ -38,6 +40,7 @@ public class ContactListActivity extends Activity {
 	private QuickAlphabeticBar alphabeticBar; 
 	private ImageButton imagebutton_record;
 	private ImageButton imagebutton_event;
+	private ImageButton imagebutton_setting;
 	private Map<Integer, ContactModel> contactIdMap = null;
 
 	@Override
@@ -47,33 +50,9 @@ public class ContactListActivity extends Activity {
 		setTitle("Contact List");
 		contactList = (ListView) findViewById(R.id.contact_list);
 		alphabeticBar = (QuickAlphabeticBar) findViewById(R.id.fast_scroller);
-
 		asyncQueryHandler = new MyAsyncQueryHandler(getContentResolver());
 		init();
-		
-		 //Click event to open Event list
-		imagebutton_event = (ImageButton) findViewById(R.id.button_event);
-		imagebutton_event.setOnClickListener(new OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent();
-				intent.setClass(ContactListActivity.this, EventActivity.class);
-				startActivity(intent);
-				finish();
-			}
-		});
-		
-		//Click to open a record list
-		imagebutton_record = (ImageButton) findViewById(R.id.button_record);
-		imagebutton_record.setOnClickListener(new OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent();
-				intent.setClass(ContactListActivity.this, RecordActivity.class);
-				startActivity(intent);
-				finish();
-			}
-		});
+		layout();
 	}
 
 
@@ -149,5 +128,44 @@ public class ContactListActivity extends Activity {
 		alphabeticBar.setListView(contactList);
 		alphabeticBar.setHight(alphabeticBar.getHeight());
 		alphabeticBar.setVisibility(View.VISIBLE);
+	}
+
+	private void layout(){
+		 //Click event to open Event list
+		imagebutton_event = (ImageButton) findViewById(R.id.button_event);
+		imagebutton_event.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent();
+				intent.setClass(ContactListActivity.this, EventActivity.class);
+				startActivity(intent);
+				finish();
+			}
+		});
+		
+		//Click to open a record list
+		imagebutton_record = (ImageButton) findViewById(R.id.button_record);
+		imagebutton_record.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent();
+				intent.setClass(ContactListActivity.this, RecordActivity.class);
+				startActivity(intent);
+				finish();
+			}
+		});
+		
+		imagebutton_setting = (ImageButton) findViewById(R.id.button_setting);
+		imagebutton_setting.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent();
+				intent.setClass(ContactListActivity.this, AddEfarActivity.class);
+				startActivity(intent);
+				finish();
+			}
+		});
 	}
 }

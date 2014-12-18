@@ -19,14 +19,14 @@
      <!-- Permission to write sms -->
     <uses-permission android:name="android.permission.WRITE_SMS"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="16" />
 
     <application
-        android:name="com.efar.application.EfarApplication"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         
